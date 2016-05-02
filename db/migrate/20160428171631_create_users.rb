@@ -1,6 +1,6 @@
 class CreateUsers < ActiveRecord::Migration
   def change
-    create_table "Users", id: false, force: :cascade do |t|
+    create_table :users , id: false do |t|
     t.string  "User_ID",  limit: 30,  null: false
     t.string  "Username", limit: 255, null: false
     t.string  "Password", limit: 255, null: false
@@ -12,9 +12,9 @@ class CreateUsers < ActiveRecord::Migration
     t.string  "Title_ID", limit: 30
   end
 
-  add_index "Users", ["Title_ID"], name: "Title_ID", using: :btree
-  add_index "Users", ["User_ID", "Username", "Email"], name: "User_ID", unique: true, using: :btree
-  add_index "Users", ["User_ID"], name: "User_ID_2", using: :btree
+  # add_index "users", ["Title_ID"], name: "Title_ID", using: :btree
+  add_index "users", ["User_ID", "Username", "Email"], name: "User_ID", unique: true, using: :btree
+  # add_index "users", ["User_ID"], name: "User_ID_2", using: :btree
 
 
   end
