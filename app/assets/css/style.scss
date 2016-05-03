@@ -21,7 +21,7 @@ body a{
 	-ms-transition:0.5s all;
 }
 .banner {
-	background: url(../images/3.jpg) no-repeat center top;
+	background: image_url("3.jpg") no-repeat center top;
 	background-size: cover;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -273,7 +273,7 @@ ul.header_user_info a:hover{
 i.user{
 	width: 17px;
 	height: 17px;
-	background: url(../images/img-sprite.png) no-repeat -241px -67px;
+	background: image_url("img-sprite.png") no-repeat -241px -67px;
 	float: left;
 	margin:6px 10px 0 5px;
 }
