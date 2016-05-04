@@ -39,7 +39,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			  <a class="login" href="login.html">
 				<i class="user"> </i> 
 				<li class="user_desc">My Account</li>
+				          <% if logged_in? %>
+        
+          <li><%= link_to current_user.name, '#' %></li>
+                <%= link_to "Log out", logout_path, method: "delete" %>
+                        <% else %>
+          <li><%= link_to "Log in", login_path %></li>
+        <% end %>
+
 			  </a>
+			  
 			  <div class="clearfix"> </div>
 		     </ul>
 		    <!-- start search-->

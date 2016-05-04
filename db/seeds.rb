@@ -5,5 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Title.create(:Title_ID =>'2',:Title_Name =>'Mr')
-User.create(:User_ID =>'123', :Username => 'paul',:password =>'password', :email =>'me@me.com',:DOB => '4/4/1990',:Status =>1,:Role => 1, :Gender =>'male',:Title_ID => 1);
+# Title.create(:Title_ID =>'2',:Title_Name =>'Mr')
+# User.create(:User_ID =>'123', :Username => 'paul',:password_digest =>'password', :email =>'me@me.com',:DOB => '4/4/1990',:Status =>1,:Role => 1, :Gender =>'male',:Title_ID => 1);
+User.create(name: "Michael Hartl", email: "me@me.com",password: "password", password_confirmation: "password", Title_ID: 1,role: 1,gender: 'male',status: 1)

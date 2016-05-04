@@ -11,13 +11,13 @@ body {
 	font-size: 12px;
 	color: #363636;
 	background-repeat: repeat-x;
-	background-image: url(../images/bg/pick_bg.jpg);
+	background-image: image_url("../images/bg/pick_bg.jpg");
 }
 body.error {
-	background-image: url(../images/bg/pick_bg.error.jpg);
+	background-image: image_url("../images/bg/pick_bg.error.jpg");
 }
 body.dashborad {
-	background-image: url(../images/menu_bg.jpg);
+	background-image: image_url("../images/menu_bg.jpg");
 	background-repeat: repeat-y;
 }
 body.nobg {
@@ -150,7 +150,7 @@ label.disabled {
 	display: none;
 }
 #preloader {
-	background: #000000 url(../images/loadder/preloader.gif) no-repeat 12px 10px;
+	background: #000000 image_url("../images/loadder/preloader.gif") no-repeat 12px 10px;
 	font-size: 11px;
 	height: 20px;
 	left: 50%;
@@ -225,7 +225,7 @@ ul.tabs li {
 	font-family: Arial, Helvetica, sans-serif;
 	font-weight: 700;
 	display: none;
-	background-image: url(../images/bg/NavBg.png);
+	background-image: image_url("../images/bg/NavBg.png");
 }
 ul.tabs li span {
 	color: #999;
@@ -250,7 +250,7 @@ ul.tabs li a {
 }
 ul.tabs li a:hover {
 	color: #000;
-	background-image: url(../images/bg/NavBgHover.png);
+	background-image: image_url("../images/bg/NavBgHover.png");
 }
 ul.tabs li.active a {
 	color: #900;
@@ -406,7 +406,7 @@ span img {
 }
 .breaks {
 	height: 7px;
-	background-image: url(../images/bg/beake.png);
+	background-image: image_url("../images/bg/beake.png");
 	background-repeat:repeat-x;
 	background-position: center center;
 	margin: 0 0 10px 35px;
@@ -414,7 +414,7 @@ span img {
 .breaks span {
 	height: 7px;
 	width:13px;
-	background-image: url(../images/bg/beake_s.png);
+	background-image: image_url("../images/bg/beake_s.png");
 	background-repeat: no-repeat;
 	background-position: center center;
 	display: block;
@@ -512,11 +512,11 @@ ul.list_arrow, ul.list_arrow2 {
 }
 ul.list_arrow li {
 	padding: 2px 2px 2px 0px;
-	list-style-image: url(../images/icon/arrow_a.gif);
+	list-style-image: image_url("../images/icon/arrow_a.gif");
 }
 ul.list_arrow2 li {
 	padding: 2px 2px 2px 0px;
-	list-style-image:url(../images/icon/arrow.png)
+	list-style-image: image_url("../images/icon/arrow.png")
 }
 /*
 ------------------------------------------------------------
@@ -546,7 +546,7 @@ ul.list_arrow2 li {
 }
 #news_update ul li .detail_news .morelink {
 	display: inline-block;
-	background-image: url(../images/icon/link.png);
+	background-image: image_url("../images/icon/link.png");
 	height: 15px;
 	background-position: right 2px;
 	background-repeat: no-repeat;
@@ -580,13 +580,13 @@ ul.list_arrow2 li {
 	height:24px!important;
 }
 .msg_icon.new {
-	background-image:url(../images/icon/38.png);
+	background-image: image_url("../images/icon/38.png");
 }
 .msg_icon.open {
-	background-image:url(../images/icon/25.png);
+	background-image: image_url("../images/icon/25.png");
 }
 .msg_icon.ans {
-	background-image:url(../images/icon/24.png);
+	background-image: image_url("../images/icon/24.png");
 }
 .msg_topic {
 	margin-left: 25px;
@@ -653,7 +653,7 @@ ul.list_arrow2 li {
 	text-indent: -9999px;
 	position: absolute;
 	cursor: pointer;
-	background-image: url(../images/openFiles.png);
+	background-image: image_url("../images/openFiles.png");
 }
 .data, .dataSet, .dataImg {
 	display:none;
@@ -697,7 +697,7 @@ ul.list_arrow2 li {
 	letter-spacing: 1px;
 	font-size: 10px;
 	line-height: 250px;
-	background-image: url(../images/icon/bin.jpg);
+	background-image: image_url("../images/icon/bin.jpg");
 	background-repeat: no-repeat;
 	background-position: center center;
 }
@@ -824,10 +824,10 @@ a.ui-selectmenu, a.ui-selectmenu:link, a.ui-selectmenu:active, a.ui-selectmenu:v
 	color: #666666;
 }
 .ui-state-active .ui-icon.ui-selectmenu-icon {
-	background : url(../images/forms/seleteup.png) no-repeat right top transparent;
+	background : image_url("../images/forms/seleteup.png") no-repeat right top transparent;
 }
 .ui-state-highlight .ui-icon.ui-selectmenu-icon {
-	background : url(../images/forms/seletedown.png) no-repeat right top transparent;
+	background : image_url("../images/forms/seletedown.png") no-repeat right top transparent;
 }
 .ui-icon.ui-selectmenu-icon {
 	float : right;
@@ -836,7 +836,7 @@ a.ui-selectmenu, a.ui-selectmenu:link, a.ui-selectmenu:active, a.ui-selectmenu:v
 	position: absolute;
 	right:0;
 	background-color: transparent;
-	background-image: url(../images/forms/seletedown.png);
+	background-image: image_url("../images/forms/seletedown.png");
 	background-repeat: no-repeat;
 	background-position: right -2px;
 }
@@ -1067,7 +1067,7 @@ ul.rowData li > input {
 	bottom: 25px;
 	opacity:0;
 	filter:alpha(opacity=0);
-	background-image: url(../images/info.png);
+	background-image: image_url("../images/info.png");
 	background-repeat: no-repeat;
 	background-position: 10px center;
 }
@@ -1083,7 +1083,7 @@ ul.rowData li > input {
 	text-shadow:1px 1px 1px #C8EBFB;
 	text-transform: uppercase;
 	margin-bottom:15px;
-	background-image: url(../images/info.png);
+	background-image: image_url("../images/info.png");
 	background-repeat: no-repeat;
 	background-position: 10px center;
 }
@@ -1097,7 +1097,7 @@ ul.rowData li > input {
 	background-color:#fc4a48;
 	color:#5A0000;
 	text-shadow:1px 1px 1px #E64040;
-	background-image: url(../images/error.png);
+	background-image:  image_url("../images/error.png");
 	border: 1px #a93a25 solid;
 }
 #alertMessage.error span, .alertMessage.error span {
@@ -1110,7 +1110,7 @@ ul.rowData li > input {
 	background-color:#9bc652;
 	color:#324e03;
 	text-shadow:1px 1px 1px #5c9201;
-	background-image: url(../images/checkmark2.png);
+	background-image:  image_url("../images/checkmark2.png");
 	border: 1px solid #69a44d;
 }
 .alertMessage.success span {
@@ -1123,7 +1123,7 @@ ul.rowData li > input {
 	background-color:#fcdb72;
 	color:#987402;
 	text-shadow:1px 1px 1px #e7b104;
-	background-image: url(../images/help.png);
+	background-image:  image_url("../images/help.png");
 }
 #alertMessage.warning span, .alertMessage.warning span {
 	border-left: 1px #987402 solid;
@@ -1179,7 +1179,7 @@ filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
 }
 label.iPhoneCheckLabelOn {
 	color:#FFF;
-	background:url(../images/on.png) no-repeat left top;
+	background: image_url("../images/on.png") no-repeat left top;
 	text-shadow:0 1px 2px rgba(0, 0, 0, 0.6);
 	left:0;
 	padding-top:5px
@@ -1189,7 +1189,7 @@ label.iPhoneCheckLabelOn span {
 }
 label.iPhoneCheckLabelOff {
 	color:#FFF;
-	background:url(../images/off.png) no-repeat right 0;
+	background: image_url("../images/off.png") no-repeat right 0;
 	text-shadow:0 1px 2px rgba(0, 0, 0, 0.6);
 	text-align:right;
 	right:0
@@ -1204,19 +1204,19 @@ label.iPhoneCheckLabelOff span {
 	position:absolute;
 	top:0;
 	left:0;
-	background:url(../images/slider_left.png) no-repeat;
+	background: image_url("../images/slider_left.png") no-repeat;
 	padding-left:3px
 }
 .iPhoneCheckHandleRight {
 	height:100%;
 	width:100%;
 	padding-right:3px;
-	background:url(../images/slider_right.png) no-repeat right 0
+	background: image_url("../images/slider_right.png") no-repeat right 0
 }
 .iPhoneCheckHandleCenter {
 	height:100%;
 	width:100%;
-	background:url(../images/slider_center.png)
+	background: image_url("../images/slider_center.png")
 }
 .text_success {
 	font-size:14px;
@@ -1260,7 +1260,7 @@ label.iPhoneCheckLabelOff span {
 #versionBar {
 	height: 50px;
 	background-color: #000;
-	background-image: url(../images/top_bgrepeat.jpg);
+	background-image:  image_url("../images/top_bgrepeat.jpg");
 	text-shadow:none;
 	color:#FFF;
 	text-align: right;
@@ -1286,7 +1286,7 @@ label.iPhoneCheckLabelOff span {
 	-webkit-border-radius: 15px;
 }
 #login .ribbon {
-	background-image: url(../images/logform.png);
+	background-image:  image_url("../images/logform.png");
 	position: absolute;
 	width: 111px;
 	height: 110px;
@@ -1299,7 +1299,7 @@ label.iPhoneCheckLabelOff span {
 	width: 434px;
 	z-index: -1;
 	margin-top: 5px;
-	background-image: url(../images/shadowForm.png);
+	background-image:  image_url("../images/shadowForm.png");
 	height: 33px;
 	margin-left: -10px;
 }
@@ -1351,10 +1351,10 @@ label.iPhoneCheckLabelOff span {
 	color:#000;
 }
 #login #username_id {
-	background-image: url(../images/icon/user_.png);
+	background-image:  image_url("../images/icon/user_.png");
 }
 #login #password {
-	background-image: url(../images/icon/pass_.png);
+	background-image:  image_url("../images/icon/pass_.png");
 	font-size: 35px;
 }
 #login .userbox {
@@ -1364,7 +1364,7 @@ label.iPhoneCheckLabelOff span {
 	z-index: 10;
 	width: 418px;
 	background-color: #FFF;
-	background-image: url(../images/loadder/loader_green.gif);
+	background-image:  image_url("../images/loadder/loader_green.gif");
 	background-repeat: no-repeat;
 	background-position: center 170px;
 }
@@ -1386,7 +1386,7 @@ label.iPhoneCheckLabelOff span {
 #header {
 	width: 100%;
 	height: 45px;
-	background: #000000 url(../images/top_bgrepeat.jpg) repeat-x;
+	background: #000000  image_url("../images/top_bgrepeat.jpg") repeat-x;
 	text-shadow: 1px 0 0 #666666;
 	color: #ffffff;
 	position: fixed;
@@ -1394,8 +1394,8 @@ label.iPhoneCheckLabelOff span {
 	-moz-box-shadow: 0px 2px 15px #333333;
 	-webkit-box-shadow: 0px 2px 15px #333333;
 	box-shadow: 0px 2px 15px #333333;
- filter: progid: DXImageTransform.Microsoft.Shadow(strength = 5, direction = 180, color = '#999999');
-	-ms-filter: "progid: DXImageTransform.Microsoft.Shadow(strength = 5, Direction = 180, Color = '#aaaaaa')";
+ //filter: progid: DXImageTransform.Microsoft.Shadow(strength = 5, direction = 180, color = '#999999');
+	// -ms-filter: "progid: DXImageTransform.Microsoft.Shadow(strength = 5, Direction = 180, Color = '#aaaaaa')";
 	min-width: 768px;
 }
 #header a {
@@ -1418,7 +1418,7 @@ label.iPhoneCheckLabelOff span {
 #header #account_info div {
 	border-left:1px #333333 solid;
 	padding:0 10px 0 20px;
-	background-image: url(../images/accbg.png);
+	background-image:  image_url("../images/accbg.png");
 	cursor:pointer;
 	display:inline-block;
 	height: 45px;
@@ -1460,7 +1460,7 @@ label.iPhoneCheckLabelOff span {
 	margin-top: 8px;
 }
 #shadowhead {
-	background-image: url(../images/bg/pick_bg.jpg);
+	background-image:  image_url("../images/bg/pick_bg.jpg");
 	height:58px;
 	background-repeat:repeat-x;
 	position: absolute;
@@ -1475,7 +1475,7 @@ label.iPhoneCheckLabelOff span {
 ------------------------------------------------------------
 */
 #left_menu {
-	background-image: url(../images/menu_bg.jpg);
+	background-image:  image_url("../images/menu_bg.jpg");
 	float: left;
 	position:absolute;
 	left:0px;
@@ -1496,7 +1496,7 @@ label.iPhoneCheckLabelOff span {
 	border-top: 1px solid #3f3f42;
 	display: block;
 	text-transform: capitalize;
-		background-image: url(../images/menu_bg.jpg);
+		background-image:  image_url("../images/menu_bg.jpg");
 }
 .main_menu li.active {
 	height: auto;
@@ -1521,7 +1521,7 @@ label.iPhoneCheckLabelOff span {
 	-webkit-box-shadow: 2px 2px 3px 2px #333333;
 	-moz-box-shadow: 2px 2px 3px 2px #333333;
 	box-shadow: 2px 2px 3px 2px #333333;
-	background-image: url(../images/bg/214.png);
+	background-image:  image_url("../images/bg/214.png");
 }
 .main_menu li ul li {
 	height: 45px;
@@ -1547,7 +1547,7 @@ label.iPhoneCheckLabelOff span {
 }
 .main_menu li .arr span {
 	position: absolute;
-	background-image: url(../images/arr3.png);
+	background-image:  image_url("../images/arr3.png");
 	width:6px;
 	height: 12px;
 	top:20px;
@@ -1609,7 +1609,7 @@ label.iPhoneCheckLabelOff span {
 	margin-bottom: -3px;
 }
 .main_menu li.select {
-	background-image:url(../images/selectM.png);
+	background-image: image_url("../images/selectM.png");
 	background-repeat:no-repeat;
 	border-bottom: 1px #111111 solid;
 	border-top: 1px #000000 solid
@@ -1628,13 +1628,13 @@ label.iPhoneCheckLabelOff span {
 .main_menu li a:hover, .main_menu li:hover {
 	color: #FFF;
 	text-shadow:0 2px 0 #000000;
-	background-image:url(../images/foot.png);
+	background-image: image_url("../images/foot.png");
 }
 .main_menu li:hover {
 	border-top: 1px #000000 solid;
 }
 .main_menu li.select a:hover {
-	background-image:url(../images/selectM.png);
+	background-image: image_url("../images/selectM.png");
 }
 .main_menu li.select ul li a:hover {
 	background-image:none;
@@ -1679,7 +1679,7 @@ label.iPhoneCheckLabelOff span {
 	-webkit-box-shadow: 2px 2px 3px 2px #333333;
 	-moz-box-shadow: 2px 2px 3px 2px #333333;
 	box-shadow: 2px 2px 3px 2px #333333;
-	background-image: url(../images/bg/214.png);
+	background-image:  image_url("../images/bg/214.png");
 }
 .iconmenu li ul li {
 	height: 45px;
@@ -1705,7 +1705,7 @@ label.iPhoneCheckLabelOff span {
 }
 .iconmenu li .arr span {
 	position: absolute;
-	background-image: url(../images/arr3.png);
+	background-image:  image_url("../images/arr3.png");
 	width:6px;
 	height: 12px;
 	top:20px;
@@ -1767,7 +1767,7 @@ label.iPhoneCheckLabelOff span {
 	margin-bottom: -3px;
 }
 .iconmenu li.select {
-	background-image:url(../images/selectM.png);
+	background-image: image_url("../images/selectM.png");
 	background-repeat:no-repeat;
 	border-bottom: 1px #3d3d42 solid;
 	border-top: 1px #232328 solid;
@@ -1801,7 +1801,7 @@ label.iPhoneCheckLabelOff span {
 	position: fixed;
 	bottom: 0px;
 	left: 0px;
-	background-image: url(../images/foot.png);
+	background-image:  image_url("../images/foot.png");
 	display: none;
 }
 .menubottom .inner {
@@ -1833,7 +1833,7 @@ a#hide_menu {
 	top: 145px;
 	opacity:1;
 	filter:alpha(opacity=100);
-	background-image: url(../images/icon/options2.jpg);
+	background-image:  image_url("../images/icon/options2.jpg");
 	 -webkit-transition: background-color .2s ease-out;
 	 -moz-transition: background-color .2s ease-out;
 	 -o-transition: background-color .2s ease-out;
@@ -1846,7 +1846,7 @@ a#show_menu {
 	top: 165px;
 	left: 0px;
 	cursor: pointer;
-	background-image: url(../images/icon/options.jpg);
+	background-image:  image_url("../images/icon/options.jpg");
 	width: 21px;
 	height: 62px;
 	z-index: 48;
@@ -1857,7 +1857,7 @@ a#show_menu_icon {
 	left: 20px;
 	top: 145px;
 	cursor: pointer;
-	background-image: url(../images/icon/options3.jpg);
+	background-image:  image_url("../images/icon/options3.jpg");
 	width: 61px;
 	height: 21px;
 	z-index: 100;
@@ -1871,7 +1871,7 @@ a#hide_menu_icon {
 	top: 145px;
 	opacity:1;
 	filter:alpha(opacity=100);
-	background-image: url(../images/icon/options2.jpg);
+	background-image:  image_url("../images/icon/options2.jpg");
  -webkit-transition: background-color .2s ease-out;
  -moz-transition: background-color .2s ease-out;
  -o-transition: background-color .2s ease-out;
@@ -1923,7 +1923,7 @@ a#hide_menu:hover, a#show_menu:hover, a#show_menu_icon:hover, a#hide_menu_icon:h
 	color: #ffffff;
 	font-weight: bold;
 	text-shadow: 1px 0 0 #333333;
-	background: transparent url('../images/bg_notification.png') no-repeat center;
+	background: transparent  image_url('../images/bg_notification.png') no-repeat center;
 	width: 37px;
 	height: 37px;
 	text-align: center;
@@ -1944,7 +1944,7 @@ a#hide_menu:hover, a#show_menu:hover, a#show_menu_icon:hover, a#hide_menu_icon:h
 #content .inner .logo {
 	float: left;
 	padding: 45px 0 0 0;
-	background-image: url(../images/logo/logo_admin.png);
+	background-image:  image_url("../images/logo/logo_admin.png");
 	width: 191px;
 	height: 44px;
 	background-repeat: no-repeat;
@@ -1975,7 +1975,7 @@ a#hide_menu:hover, a#show_menu:hover, a#show_menu_icon:hover, a#hide_menu_icon:h
 .onecolumn .colla {
 	width:50px;
 	height:5px;
-	background-image:url(../images/colla.png);
+	background-image: image_url("../images/colla.png");
 	background-repeat:repeat-x;
 	position: absolute;
 	left: 50%;
@@ -2019,7 +2019,7 @@ a#hide_menu:hover, a#show_menu:hover, a#show_menu_icon:hover, a#hide_menu_icon:h
 	margin-right:5px;
 }
 .onecolumn .content {
-	background: #ffffff url("../images/inner-shadow.png") repeat-x;
+	background: #ffffff  image_url("../images/inner-shadow.png") repeat-x;
 	border-top: 1px solid #cecece;
 	padding: 15px 25px;
 	min-height: 50px;
@@ -2235,7 +2235,7 @@ a#hide_menu:hover, a#show_menu:hover, a#show_menu_icon:hover, a#hide_menu_icon:h
 	min-height: 71px;
 	width: auto;
 	background-color: #FFF;
-	background-image: url(../components/uploadify/add.png);
+	background-image:  image_url("../components/uploadify/add.png");
 	background-position: center center;
 	background-repeat: no-repeat;
 }
@@ -2362,11 +2362,11 @@ position:relative;
 	display:block;
 	width:160px;
 	height:120px;
-	background:url("../images/pic_highlight.png") no-repeat top left;
+	background: image_url("../images/pic_highlight.png") no-repeat top left;
 	position: absolute;
 }
 .expandIcon {
-	background:url("../images/pen_icon.html") no-repeat left top;
+	background: image_url("../images/pen_icon.html") no-repeat left top;
 	cursor:pointer;
 	display:none;
 	height:25px;
@@ -2638,8 +2638,8 @@ img.stackphotos {
 	-webkit-box-shadow: 2px 2px 2px #aaaaaa;
 	box-shadow: 2px 2px 2px #aaaaaa;
 	opacity: 0.8;
- -ms-filter: progid: DXImageTransform.Microsoft.Alpha(Opacity = 80);
-	filter: alpha(opacity = 80);
+ //-ms-filter: progid: DXImageTransform.Microsoft.Alpha(Opacity = 80);
+	// filter: alpha(opacity = 80);
 }
 .legendBG {
 	margin-top:-30px;
@@ -2691,7 +2691,7 @@ img.stackphotos {
  transition: background-color .2s ease-out;
 }
 .chart-pie-shadow {
-	background-image:url(../images/chaft-shadow.png);
+	background-image: image_url("../images/chaft-shadow.png");
 	height:14px;
 	background-repeat:no-repeat;
 	background-position:center center;
@@ -2742,14 +2742,14 @@ img.stackphotos {
 	border: none;
 }
 .ui-spinner-up {
-	background: url(../images/forms/spinnerTop.png) no-repeat;
+	background:  image_url("../images/forms/spinnerTop.png") no-repeat;
 	height: 15px;
 	top: 0;
 }
 .ui-spinner-down {
 	height: 15px;
 	bottom: 0px;
-	background: url(../images/forms/spinnerBottom.png) no-repeat;
+	background:  image_url("../images/forms/spinnerBottom.png") no-repeat;
 }
 .ui-spinner-pressed {
 }
@@ -2822,10 +2822,10 @@ table.static .custom-checkbox label {
 	background-position: -10px -413px;
 }
 .custom-checkbox label {
-	background: url(../images/checkbox.png) no-repeat;
+	background:  image_url("../images/checkbox.png") no-repeat;
 }
 .custom-radio label {
-	background: url(../images/radiobutton.png) no-repeat;
+	background:  image_url("../images/radiobutton.png") no-repeat;
 }
 .custom-checkbox label, .custom-radio label {
 	background-position: -10px -14px;
@@ -3026,20 +3026,20 @@ a.link {
 }
 .comment .toolMsg span.iconReply {
 	width:44px;
-	background-image:url(../images/icon/icon_reply_comment.png);
+	background-image: image_url("../images/icon/icon_reply_comment.png");
 }
 .comment .toolMsg span.iconEdit {
 	margin-top:-22px;
 	margin-left:15px;
-	background-image:url(../images/icon/icon_edit_comment.png);
+	background-image: image_url("../images/icon/icon_edit_comment.png");
 }
 .comment .toolMsg span.iconDelete {
-	background-image:url(../images/icon/icon_delete_comment.png);
+	background-image: image_url("../images/icon/icon_delete_comment.png");
 	margin-top:3px;
 }
 .comment .reply {
 	padding-left:40px;
-	background-image:url(../images/arrReply.png);
+	background-image: image_url("../images/arrReply.png");
 	background-position:45px 25px;
 	background-repeat:no-repeat;
 }
@@ -3088,10 +3088,10 @@ margin-left:35px;
 	z-index:10;
 }
 .userOnline li a.statusOnline {
-	background-image:url(../images/icon/bullet_green.png);
+	background-image: image_url("../images/icon/bullet_green.png");
 }
 .userOnline li a.statusOffline {
-	background-image:url(../images/icon/bullet_red.png);
+	background-image: image_url("../images/icon/bullet_red.png");
 }
 .userOnline li a {
 	padding:15px 25px;
@@ -3244,7 +3244,7 @@ margin-left:35px;
 	border: 1px solid #FFD700;
 	font: bold 13px Verdana, Arial, Helvetica, sans-serif;
 	color:#5A5655;
-	background: #FFF url(../images/loadder/loader_green.gif) no-repeat 5px;
+	background: #FFF  image_url("../images/loadder/loader_green.gif") no-repeat 5px;
 	z-index:998;
 }
 /*   
@@ -3282,7 +3282,7 @@ margin-left:35px;
 	display:none;
 }
 #box1Filter, #box2Filter {
-	background: url(../images/search-white.png) no-repeat 10px 5px #ffffff;
+	background:  image_url("../images/search-white.png") no-repeat 10px 5px #ffffff;
 	border : 1px solid #dcdcdc;
 	outline : 0;
 	padding : 2px 5px 5px 30px;

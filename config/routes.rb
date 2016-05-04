@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get    'sessions/new'
+  get    'sessions/new2'
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
@@ -12,11 +13,9 @@ Rails.application.routes.draw do
 
   resources :categories
 
-  resources :subcategories
-
   resources :products
 
-  resources :users
+ 
 
   get 'welcome/index'
 
