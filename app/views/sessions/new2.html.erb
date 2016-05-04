@@ -47,29 +47,56 @@ html {
   <div  class="logo" ><%= image_tag "pnec.png", alt:"ziceAdmin" %></div>
   <div class="userbox"></div>
   <div class="formLogin">
-   <form name="formLogin"  id="formLogin" action="#">
-          <div class="tip">
-          <input name="username" type="text"  id="username_id"  title="Username"   />
-          </div>
-          <div class="tip">
-          <input name="password" type="password" id="password"   title="Password"  />
-          </div>
-          <div style="padding:20px 0px 0px 0px ;">
-            <div style="float:left; padding:0px 0px 2px 0px ;">
-           <input type="checkbox" id="on_off" name="remember" class="on_off_checkbox"  value="1"   />
-              <span class="f_help">Remember me</span>
-              </div>
-          <div style="float:right;padding:2px 0px ;">
-              <div> 
-                <ul class="uibutton-group">
-                   <li><a class="uibutton normal" href="#"  id="but_login" >Login</a></li>
-				   <li><a class="uibutton  normal" href="#" id="forgetpass">forgot password</a></li>
-               </ul>
-              </div>
-            </div>
-</div>
+<!--   <form name="formLogin"  id="formLogin" action="#">-->
+<!--          <div class="tip">-->
+<!--          <input name="username" type="text"  id="username_id"  title="Username"   />-->
+<!--          </div>-->
+<!--          <div class="tip">-->
+<!--          <input name="password" type="password" id="password"   title="Password"  />-->
+<!--          </div>-->
+<!--          <div style="padding:20px 0px 0px 0px ;">-->
+<!--            <div style="float:left; padding:0px 0px 2px 0px ;">-->
+<!--           <input type="checkbox" id="on_off" name="remember" class="on_off_checkbox"  value="1"   />-->
+<!--              <span class="f_help">Remember me</span>-->
+<!--              </div>-->
+<!--          <div style="float:right;padding:2px 0px ;">-->
+<!--              <div> -->
+<!--                <ul class="uibutton-group">-->
+<!--                   <li><a class="uibutton normal" href="#"  id="but_login" >Login</a></li>-->
+<!--				   <li><a class="uibutton  normal" href="#" id="forgetpass">forgot password</a></li>-->
+<!--               </ul>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--</div>-->
 
-    </form>
+<!--    </form>-->
+<% provide(:title, "Log in") %>
+
+
+<div class="row">
+  <div class="col-lg-12 ">
+    <%= form_for(:session, url: login_path,:html => {:id => "formLogin"}) do |f| %>
+<div class="tip">
+      <div class = 'col-lg-12'>
+      <%= f.email_field :email, :placeholder => "email", class: 'form-control' %>
+      </div>
+</div>
+<br>
+<div class="tip">
+    <div class = 'col-lg-12'>
+      <%= f.password_field :password, :placeholder => "password" ,class: 'form-control' %>
+      </div>
+</div>
+<br><center>
+           <div class = 'col-md-12'>
+               <ul class="uibutton-group">
+                 <li>
+      <%= f.submit "Log in",:html => {:id => "but_login"}, class: 'uibutton normal' %>
+      </li>
+      </ul>
+      </div>
+     </center>
+    <% end %>
   </div>
 </div>
   <div class="clear"></div>
