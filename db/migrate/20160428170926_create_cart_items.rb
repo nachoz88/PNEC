@@ -1,6 +1,6 @@
-class CreateCart < ActiveRecord::Migration
+class CreateCartItems < ActiveRecord::Migration
   def change
-    create_table :cart_items, primary_key: "Cart_Item_ID" do |t|
+    create_table "cart_items", primary_key: "Cart_Item_ID" do |t|
     t.string  "User_ID",    limit: 30, null: false
     t.string  "Product_ID", limit: 30, null: false
     t.integer "Quanity",    limit: 4,  null: false

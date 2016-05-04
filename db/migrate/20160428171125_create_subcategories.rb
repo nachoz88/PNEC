@@ -1,4 +1,4 @@
-class CreateSubcategory < ActiveRecord::Migration
+class CreateSubcategories < ActiveRecord::Migration
   def change
     create_table :subcategories, primary_key: "Subcategory_ID" do |t|
     t.string "Subcategory_Name", limit: 255,   null: false
