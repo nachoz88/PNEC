@@ -13,9 +13,11 @@ Rails.application.routes.draw do
 
   resources :categories
 
+  resources :subcategories
+
   resources :products
 
- 
+  resources :users
 
   get 'welcome/index'
 
