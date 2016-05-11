@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  get    'sessions/new'
-  get    'sessions/new2'
-  get    'login'   => 'sessions#new2'
+
+  get    'dashboard' => 'welcome#dashboard'
+  get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
+ 
   delete 'logout'  => 'sessions#destroy'
 
   resources :orders
