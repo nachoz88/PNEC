@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
   get    'dashboard' => 'welcome#dashboard'
+  get   'category' => 'categories#new'
   get    'login'   => 'sessions#new'
+  
   post   'login'   => 'sessions#create'
  
   delete 'logout'  => 'sessions#destroy'

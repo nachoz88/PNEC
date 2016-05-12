@@ -13,8 +13,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <meta name="keywords" content="Watches Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<%= stylesheet_link_tag ('application') %>
-<%= javascript_include_tag ('application') %>
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!-- Custom Theme files -->
+<link href="css/style.css" rel='stylesheet' type='text/css' />
+<!-- Custom Theme files -->
+<!--webfont-->
+<link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Dorsa' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<!-- start menu -->
+<link href="css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="js/megamenu.js"></script>
+<script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
+<script src="js/jquery.easydropdown.js"></script>
+<script src="js/simpleCart.min.js"> </script>
 </head>
 <body>
 	<div class="banner">
@@ -22,7 +35,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
    	  	<div class="header_top">
    	  	   <div class="header_top_left">
 	  	      <div class="box_11"><a href="checkout.html">
-		      <h4><p>Cart: <span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)</p><%= image_tag "bag.png"%><div class="clearfix"> </div></h4>
+		      <h4><p>Cart: <span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)</p><img src="images/bag.png" alt=""/><div class="clearfix"> </div></h4>
 		      </a></div>
 	          <p class="empty"><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
 	          <div class="clearfix"> </div>
@@ -39,16 +52,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			  <a class="login" href="login.html">
 				<i class="user"> </i> 
 				<li class="user_desc">My Account</li>
-				          <% if logged_in? %>
+				  <% if logged_in? %>
         
           <li><%= link_to current_user.name, '#' %></li>
                 <%= link_to "Log out", logout_path, method: "delete" %>
                         <% else %>
           <li><%= link_to "Log in", login_path %></li>
         <% end %>
-
 			  </a>
-			  
 			  <div class="clearfix"> </div>
 		     </ul>
 		    <!-- start search-->
@@ -62,8 +73,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				    </div>
 				 </div>
 				 <!----search-scripts---->
-				 <script src="../../assets/js/classie1.js"></script>
-				 <script src="../../assets/js/uisearch.js"></script>
+				 <script src="js/classie1.js"></script>
+				 <script src="js/uisearch.js"></script>
 				   <script>
 					 new UISearch( document.getElementById( 'sb-search' ) );
 				   </script>
@@ -74,7 +85,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	  </div>
 	  <div class="header_bottom">
 	   <div class="logo">
-		  <h1><a href="index.html"><span class="m_1">P</span>NEC</a></h1>
+		  <h1><a href="index.html"><span class="m_1">W</span>atches</a></h1>
 	   </div>
    	   <div class="menu">
 	     <ul class="megamenu skyblue">
@@ -121,7 +132,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<ul>
 									<li class>
 										<div class="p_left">
-										  <%= image_tag "p1.jpg" , class:"img-responsive" ,alt:""%>
+										  <img src="images/p1.jpg" class="img-responsive" alt=""/>
 										</div>
 										<div class="p_right">
 											<h4><a href="#">Denim shirt</a></h4>
@@ -132,7 +143,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</li>
 									<li>
 										<div class="p_left">
-										  <%= image_tag "p2.jpg" , class:"img-responsive" ,alt:""%>
+										  <img src="images/p2.jpg" class="img-responsive" alt=""/>
 										</div>
 										<div class="p_right">
 											<h4><a href="#">Denim shirt</a></h4>
@@ -143,7 +154,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</li>
 									<li>
 										<div class="p_left">
-										  <%= image_tag "p3.jpg" , class:"img-responsive" ,alt:""%>
+										  <img src="images/p3.jpg" class="img-responsive" alt=""/>
 										</div>
 										<div class="p_right">
 											<h4><a href="#">Denim shirt</a></h4>
@@ -201,7 +212,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<ul>
 									<li class>
 										<div class="p_left">
-										  <%= image_tag "p1.jpg" , class:"img-responsive" ,alt:""%>
+										  <img src="images/p1.jpg" class="img-responsive" alt=""/>
 										</div>
 										<div class="p_right">
 											<h4><a href="#">Denim shirt</a></h4>
@@ -212,7 +223,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</li>
 									<li>
 										<div class="p_left">
-										  <%= image_tag "p2.jpg" , class:"img-responsive" ,alt:""%>
+										  <img src="images/p2.jpg" class="img-responsive" alt=""/>
 										</div>
 										<div class="p_right">
 											<h4><a href="#">Denim shirt</a></h4>
@@ -223,7 +234,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</li>
 									<li>
 										<div class="p_left">
-										  <%= image_tag "p3.jpg" , class:"img-responsive" ,alt:""%>
+										  <img src="images/p3.jpg" class="img-responsive" alt=""/>
 										</div>
 										<div class="p_right">
 											<h4><a href="#">Denim shirt</a></h4>
@@ -254,7 +265,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
            <li class="col-sm-4">
               <a href="single.html" class="item-link" title="">
                 <div class="bannerBox">
-                   <%= image_tag "w1.jpg" ,class:"item-img" ,title:"" ,alt:"" ,width:"100%" ,height:"100%"%>
+                   <img src="images/w1.jpg" class="item-img" title="" alt="" width="100%" height="100%">
                    <div class="item-html">
                       <h3>Men's<span>Watches</span></h3>
                       <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
@@ -266,7 +277,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
            <li class="col-sm-4">
               <a href="single.html" class="item-link" title="">
                 <div class="bannerBox">
-                   <%= image_tag "w2.jpg" ,class:"item-img" ,title:"" ,alt:"" ,width:"100%" ,height:"100%"%>
+                   <img src="images/w3.jpg" class="item-img" title="" alt="" width="100%" height="100%">
                    <div class="item-html">
                       <h3>Men's<span>Watches</span></h3>
                       <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
@@ -278,7 +289,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
            <li class="col-sm-4">
               <a href="single.html" class="item-link" title="">
                 <div class="bannerBox">
-                   <%= image_tag "w2.jpg" ,class:"item-img" ,title:"" ,alt:"" ,width:"100%" ,height:"100%"%>
+                   <img src="images/w2.jpg" class="item-img" title="" alt="" width="100%" height="100%">
                    <div class="item-html">
                       <h3>Women's<span>Watches</span></h3>
                       <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
@@ -302,12 +313,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<ul class="lb-album" >
 					<li>
 						<a href="#image-1">
-							<%= image_tag"g1.jpg" , class:"img-responsive" ,  alt:"image01"%>
+							<img src="images/g1.jpg"  class="img-responsive" alt="image01"/>
 							<span>Pointe</span>
 						</a>
 						<div class="lb-overlay" id="image-1">
 							<a href="#page" class="lb-close">x Close</a>
-							<%= image_tag"g1.jpg" , class:"img-responsive" ,  alt:"image01"%>
+							<img src="images/g1.jpg"  class="img-responsive" alt="image01"/>
 							<div>
 								<h3>pointe <span>/point/</span></h3>
 								<p>Dance performed on the tips of the toes</p>
@@ -316,11 +327,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</li>
 					<li>
 						<a href="#image-2">
-							<%= image_tag"g2.jpg" , class:"img-responsive" ,  alt:"image02"%>
+							<img src="images/g2.jpg"  class="img-responsive" alt="image02"/>
 							<span>Port de bras</span>
 						</a>
 						<div class="lb-overlay" id="image-2">
-							<%= image_tag"g2.jpg" , class:"img-responsive" ,  alt:"image02"%>
+							<img src="images/g2.jpg"  class="img-responsive" alt="image02"/>
 							<div>							
 								<h3>port de bras <span>/ˌpôr də ˈbrä/</span></h3>
 								<p>An exercise designed to develop graceful movement and disposition of the arms</p>
@@ -330,11 +341,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</li>
 					<li>
 						<a href="#image-3">
-							<%= image_tag"g3.jpg" , class:"img-responsive" ,  alt:"image03"%>
+							<img src="images/g3.jpg"  class="img-responsive" alt="image03"/>
 							<span>Plié</span>
 						</a>
 						<div class="lb-overlay" id="image-3">
-							<%= image_tag"g3.jpg" , class:"img-responsive" ,  alt:"image03"%>
+							<img src="images/g3.jpg"  class="img-responsive" alt="image03"/>
 							<div>							
 								<h3>pli·é <span>/plēˈā/</span></h3>
 								<p>A movement in which a dancer bends the knees and straightens them again</p>
@@ -344,11 +355,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</li>
 					<li>
 						<a href="#image-4">
-							<%= image_tag"g4.jpg" , class:"img-responsive" ,  alt:"image04"%>
+							<img src="images/g4.jpg"  class="img-responsive" alt="image04"/>
 							<span>Adagio</span>
 						</a>
 						<div class="lb-overlay" id="image-4">
-							<%= image_tag"g4.jpg" , class:"img-responsive" ,  alt:"image04"%>
+							<img src="images/g4.jpg"  class="img-responsive" alt="image04"/>
 							<div>							
 								<h3>a·da·gio <span>/əˈdäjō/</span></h3>
 								<p>A movement or composition marked to be played adagio</p>
@@ -358,11 +369,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</li>
 					<li>
 						<a href="#image-5">
-							<%= image_tag"g5.jpg" , class:"img-responsive" ,  alt:"image05"%>
+							<img src="images/g5.jpg"  class="img-responsive" alt="image05"/>
 							<span>Frappé</span>
 						</a>
 						<div class="lb-overlay" id="image-5">
-							<%= image_tag"g5.jpg" , class:"img-responsive" ,  alt:"image05"%>
+							<img src="images/g5.jpg"  class="img-responsive" alt="image05"/>
 							<div>							
 								<h3>frap·pé<span>/fraˈpā/</span></h3>
 								<p>Involving a beating action of the toe of one foot against the ankle of the supporting leg</p>
@@ -372,11 +383,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</li>
 					<li>
 						<a href="#image-6">
-							<%= image_tag"g6.jpg" , class:"img-responsive" ,  alt:"image06"%>
+							<img src="images/g6.jpg"  class="img-responsive" alt="image06"/>
 							<span>Glissade</span>
 						</a>
 						<div class="lb-overlay" id="image-6">
-							<%= image_tag"g6.jpg" , class:"img-responsive" ,  alt:"image06"%>
+							<img src="images/g6.jpg"  class="img-responsive" alt="image06"/>
 							<div>							
 								<h3>glis·sade <span>/gliˈsäd/</span></h3>
 								<p>One leg is brushed outward from the body, which then takes the weight while the second leg is brushed in to meet it</p>
@@ -386,11 +397,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</li>
 					<li>
 						<a href="#image-7">
-							<%= image_tag"g7.jpg" , class:"img-responsive" ,  alt:"image07"%>
+							<img src="images/g7.jpg"  class="img-responsive" alt="image07"/>
 							<span>Jeté</span>
 						</a>
 						<div class="lb-overlay" id="image-7">
-							<%= image_tag"g7.jpg" , class:"img-responsive" ,  alt:"image07"%>
+							<img src="images/g7.jpg"  class="img-responsive" alt="image07"/>
 							<div>							
 								<h3>je·té <span>/zhə-ˈtā/</span></h3>
 								<p>A springing jump made from one foot to the other in any direction</p>
@@ -400,11 +411,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</li>
 					<li>
 						<a href="#image-8">
-							<%= image_tag"g8.jpg" , class:"img-responsive" ,  alt:"image08"%>
+							<img src="images/g8.jpg"  class="img-responsive" alt="image08"/>
 							<span>Piqué</span>
 						</a>
 						<div class="lb-overlay" id="image-8">
-							<%= image_tag"g8.jpg" , class:"img-responsive" ,  alt:"image08"%>
+							<img src="images/g8.jpg"  class="img-responsive" alt="image08"/>
 							<div>							
 								<h3>pi·qué <span>/pēˈkā/</span></h3>
 								<p>Strongly pointed toe of the lifted and extended leg sharply lowers to hit the floor then immediately rebounds upward</p>
