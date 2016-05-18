@@ -6,12 +6,12 @@
         <!--[if lt IE 9]>
           <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
-<link href="css/zice.style.css" rel="stylesheet" type="text/css" />
-<link href="css/icon.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" type="text/css" href="components/tipsy/tipsy.css" media="all"/>
+<link href="/css/zice.style.css" rel="stylesheet" type="text/css" />
+<link href="/css/icon.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="/components/tipsy/tipsy.css" media="all"/>
 <style type="text/css">
 html {
-	background-image: url(images/bg.jpg);
+	background-image: url(/images/bg.jpg);
 	/*background-repeat: repeat-x;*/
 	/*background-size:cover;*/
 }
@@ -37,12 +37,12 @@ html {
          
 <div id="alertMessage" class="error"></div>
 <div id="successLogin"></div>
-<div class="text_success"><img src="images/loadder/loader_green.gif"  alt="ziceAdmin" /><span>Please wait</span></div>
+<div class="text_success"><img src="/images/loadder/loader_green.gif"  alt="ziceAdmin" /><span>Please wait</span></div>
 
 <div id="login" >
   <div class="ribbon"></div>
   <div class="inner">
-  <div  class="logo" ><img src="images/pnec.png" alt="ziceAdmin" /></div>
+  <div  class="logo" ><img src="/images/pnec.png" alt="ziceAdmin" /></div>
   <div class="userbox"></div>
   <div class="formLogin">
 <!--   <form name="formLogin"  id="formLogin" action="#">-->
@@ -73,44 +73,40 @@ html {
 
 
 
-<% provide(:title, "Log in") %>
 
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
 
-
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
   
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-<div class="tip">
-     
-      <%= f.email_field :email,autofocus: true %>
-      
-</div>
-<br>
-<div class="tip">
+  <div class="field">
+    <%= f.label :Name %><br />
+    <%= f.text_field :name %>
+  </div>
 
-      <%= f.password_field :password ,autocomplete: "off" %>
-     
-</div>
-<div style="padding:20px 0px 0px 0px ;">
-            <div style="float:left; padding:0px 0px 2px 0px ;">
-                <%= f.check_box :remember_me ,:html => {:id => "on_off",:class =>"on_off_checkbox"}%>
-           <!--<input type="checkbox" id="on_off" name="remember" class="on_off_checkbox"  value="1"   />-->
-              <span class="f_help">Remember me</span>
-              </div>
-          <div style="float:right;padding:2px 0px ;">
-          
-          
-              <div> 
-               <ul class="uibutton-group">
-                 <li>
-      <%= f.submit "Log in",:html => {:id => "but_login"}, class: 'uibutton normal' %>
-      </li>
-      <li><a class="uibutton  normal" href="#" id="forgetpass">forgot password</a></li>
-               </ul>
-              </div>
-            </div>
-</div>
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
 
-    <% end %>
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+
+<%= render "users/shared/links" %>
+
   </div>
 </div>
   <div class="clear"></div>
@@ -124,12 +120,11 @@ html {
   <!-- // copyright-->
 </div>
 <!-- Link JScript-->
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="components/effect/jquery-jrumble.js"></script>
-<script type="text/javascript" src="components/ui/jquery.ui.min.js"></script>     
-<script type="text/javascript" src="components/tipsy/jquery.tipsy.js"></script>
-<script type="text/javascript" src="components/checkboxes/iphone.check.js"></script>
-<script type="text/javascript" src="js/login.js"></script>
-
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<script type="text/javascript" src="/components/effect/jquery-jrumble.js"></script>
+<script type="text/javascript" src="/components/ui/jquery.ui.min.js"></script>     
+<script type="text/javascript" src="/components/tipsy/jquery.tipsy.js"></script>
+<script type="text/javascript" src="/components/checkboxes/iphone.check.js"></script>
+<script type="text/javascript" src="/js/login.js"></script>
 </body>
 </html>

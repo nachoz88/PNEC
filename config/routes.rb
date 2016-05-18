@@ -1,12 +1,16 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   get    'dashboard' => 'welcome#dashboard'
-  get   'category' => 'categories#new'
-  get    'login'   => 'sessions#new'
-  
-  post   'login'   => 'sessions#create'
  
-  delete 'logout'  => 'sessions#destroy'
+  # get    'login'   => 'users#sessions#new'
+  
+  # post   'login'   => 'sessions#create'
+ 
+  # delete 'logout'  => 'users#sessions#destroy'
+  devise_scope :user do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
 
   resources :orders
 
@@ -16,11 +20,8 @@ Rails.application.routes.draw do
 
   resources :categories
 
-  resources :subcategories
 
   resources :products
-
-  resources :users
 
   get 'welcome/index'
 

@@ -80,7 +80,8 @@
         </head>        
          <body class="dashborad">        
         <div id="alertMessage" class="error"></div> 
-     <%= render "layouts/header" %>
+                       
+                 <%= render "layouts/header" %>
           
             
             <div id="content">
@@ -95,78 +96,83 @@
                             </ul>
 					</div>
                     <div class="clear"></div>
-                       
-                
-                      <div class="onecolumn" >
-                      <div class="header">
-                      <span><span class="ico  gray  folder"></span> Add Category </span>
-                      <div id="buttom_top">
-                     
-                          </ul>
-                      </div>
-                      </div><!-- End header --> 
-                      
-                      <br class="clear"/>
-                      <div class="content" >
-                     
-                      <!--/start TAB/-->
-                          <div id="uploadTab">
-                          <ul class="tabs" >
-                              <li ><a href="#tab1"> Category Details</a></li>       
-                        </ul>
-                        <div class="tab_container" >
-                              <div id="tab1" class="tab_content"> 
-                                  <div class="load_page">
-                                    <div style="margin-left:25px">
-                                     <!--<form  id="add" action="#"> -->
-                                     <!--   <div class="section">-->
-                                     <!--       <label>Name </label>   -->
-                                     <!--       <div> <input type="text" name="category_name" id="category_name" /></div>-->
-                                     <!--      </div><br />-->
-                                            
-                                     <!--   <div class="section">-->
-                                     <!--       <label>Description </label>-->
-                                     <!--       <textarea rows="4" cols="60" name="category_description" >Enter Description Here...</textarea></div>-->
-                                      
 
+                    
 
-                                         <!--Upload Image *crosses fingers* -->
-                                     <!--       <div class="section "> <label>Upload Image</label><input type="file" name="fileupload" accept="/image/*" />-->
-                                     <!--    </div> <br />-->
-                                         
-                                     <!--    <div class="section last">-->
-                                     <!--     <div><a class="uibutton loading"  title="Saving"  rel="1">Submit</a> <a class="uibutton special "   onclick="$('#add').get(0).reset();" title="Reset  Form"   >Clear Form</a>   -->
-                                     <!--    </div>-->
-                                     <!-- </form>-->
-                                     
-                                     <%= form_for :category, url: categories_path do |f| %>
-                                          <p>
-                                            <%= f.label :Name %><br>
-                                            <%= f.text_field :Category_Name %>
-                                          </p>
-                                         
-                                          <p>
-                                            <%= f.label :Description %><br>
-                                            <%= f.text_area :Description %>
-                                          </p>
-                                         
-                                          <p>
-                                            <%= f.submit %>
-                                          </p>
-                                     <% end %>
-                                    </div>
-                                  </div>  
-                              </div><!--tab1-->
+                  <div class="onecolumn" >
+                  <div class="header"><span ><span class="ico  gray arrow_bidirectional"></span> PRODUCTS</span> </div><!-- End header --> 
+                  <div class="clear"></div>
+                  <div class="content" >
+                  
+                      <div id="uploadTab">
+                      <ul class="tabs" >
+                           
                                     
+                      </ul>
+                      <div class="tab_container" >
+
+                          
+                          
+                          <div id="tab2" class="tab_content"> 
+                            <div class="load_page">
+                              <ul class="uibutton-group">
+                                    <li><%= link_to 'Add Product' , new_product_path,class:"uibutton icon add" %></li>
+                                    
+                              </ul>
+                              <form>
+                <div class="tableName toolbar">
+               
+<table class="display data_table2" >
+  <thead>
+    <tr>
+      
+      <th><div class="th_wrapp"> </div></th>
+      <th><div class="th_wrapp">Name</div></th>
+      <th><div class="th_wrapp">Description</div></th>
+      <th><div class="th_wrapp">Category</div></th>
+      <th><div class="th_wrapp">Price</div></th>
+      
+      <th width="199" >Management</th>
+    </tr>
+  </thead>
+  <tbody>
+     <% @products.each do |product| %>
+    <tr class="gradeA">
+    	 <span class="tip" >
+    	<td ><%= product.Image %></td>
+    	</span>
+      <td ><%= product.Product_Name %></td>
+      <td ><%= product.Description %></td>
+      <td ><%= product.Category_ID %>
+      </td>
+      <td ><%= product.Price %></td>
+       <td >
+                                      <span class="tip" >
+                                                                                   <%= link_to image_tag("/images/icon/icon_edit.png",border: 0), edit_product_path(product) %></td>
+
+                                      </span></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+         
+                </div>
+                              </form>
+                              </div>
                               
-                      </div>
-                      </div>  <!--/END TAB/-->
-                      <div class="clear"></div>
-                      </div>
-                      </div><!-- // onecolumn --> 
+
+                          </div><!--tab2-->
+                          
+                  </div>
+                  </div><!--/END TAB/-->
+
+                  <div class="clear"/></div>  
+          
+                  </div>
+                  </div>
 
                     <div class="clear"></div>
-                    <div id="footer"> &copy; Copyright 2016 <span class="tip"><a  href="#" title="PNEC" >PNEC Enterprises</a> </span> </div>
+                    <div id="footer"> &copy; Copyright 2012 <span class="tip"><a  href="#" title="Zice Admin" >Your Company Name</a> </span> </div>
                 </div> <!--// End inner -->
             </div> <!--// End content --> 
 </body>

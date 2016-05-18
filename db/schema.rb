@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160504195909) do
+ActiveRecord::Schema.define(version: 20160517215820) do
 
   create_table "cart_items", primary_key: "Cart_Item_ID", force: :cascade do |t|
     t.string  "User_ID",    limit: 30, null: false
@@ -40,39 +40,37 @@ ActiveRecord::Schema.define(version: 20160504195909) do
   add_index "orders", ["Order_ID"], name: "Order_ID", unique: true, using: :btree
 
   create_table "products", primary_key: "Product_ID", force: :cascade do |t|
-    t.string  "Product_Name",   limit: 255,                            null: false
-    t.string  "Subcategory_ID", limit: 30,                             null: false
-    t.decimal "Price",                        precision: 20, scale: 2, null: false
-    t.text    "Description",    limit: 65535,                          null: false
-    t.binary  "Image",          limit: 65535,                          null: false
-    t.integer "Status",         limit: 4,                              null: false
+    t.string  "Product_Name", limit: 255,                            null: false
+    t.integer "Category_ID",  limit: 4,                              null: false
+    t.decimal "Price",                      precision: 20, scale: 2, null: false
+    t.text    "Description",  limit: 65535,                          null: false
+    t.string  "Image",        limit: 255,                            null: false
+    t.integer "Status",       limit: 4,                              null: false
   end
 
   add_index "products", ["Product_Name"], name: "Product_Name", unique: true, using: :btree
-
-  create_table "subcategories", primary_key: "Subcategory_ID", force: :cascade do |t|
-    t.string "Subcategory_Name", limit: 255,   null: false
-    t.text   "Description",      limit: 65535, null: false
-    t.string "Category_ID",      limit: 30,    null: false
-  end
 
   create_table "titles", primary_key: "Title_ID", force: :cascade do |t|
     t.string "Title_Name", limit: 30, null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "name",            limit: 255
-    t.string   "email",           limit: 255
-    t.integer  "role",            limit: 4
-    t.string   "gender",          limit: 255
-    t.integer  "status",          limit: 4
-    t.integer  "Title_ID",        limit: 4
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
-    t.string   "password_digest", limit: 255
-    t.string   "remember_digest", limit: 255
+    t.string   "email",                  limit: 255, default: "", null: false
+    t.string   "encrypted_password",     limit: 255, default: "", null: false
+    t.string   "reset_password_token",   limit: 255
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          limit: 4,   default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip",     limit: 255
+    t.string   "last_sign_in_ip",        limit: 255
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
+    t.string   "name",                   limit: 255
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end

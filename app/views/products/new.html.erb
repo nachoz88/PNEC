@@ -77,10 +77,11 @@
         <script type="text/javascript" src="/js/zice.custom.js"></script>    
      
 
-        </head>        
+        </head>     
          <body class="dashborad">        
         <div id="alertMessage" class="error"></div> 
-     <%= render "layouts/header" %>
+                       
+          <%= render "layouts/header" %>
           
             
             <div id="content">
@@ -96,10 +97,11 @@
 					</div>
                     <div class="clear"></div>
                        
+                       
                 
                       <div class="onecolumn" >
                       <div class="header">
-                      <span><span class="ico  gray  folder"></span> Add Category </span>
+                      <span><span class="ico  gray  document"></span> Add Product </span>
                       <div id="buttom_top">
                      
                           </ul>
@@ -112,7 +114,7 @@
                       <!--/start TAB/-->
                           <div id="uploadTab">
                           <ul class="tabs" >
-                              <li ><a href="#tab1"> Category Details</a></li>       
+                              <li ><a href="#tab1"> Product Details</a></li>       
                         </ul>
                         <div class="tab_container" >
                               <div id="tab1" class="tab_content"> 
@@ -121,33 +123,64 @@
                                      <!--<form  id="add" action="#"> -->
                                      <!--   <div class="section">-->
                                      <!--       <label>Name </label>   -->
-                                     <!--       <div> <input type="text" name="category_name" id="category_name" /></div>-->
+                                     <!--       <div> <input type="text"  placeholder="Username" name="username" id="username"  class="validate[required,minSize[6],maxSize[20],] medium" /></div>-->
                                      <!--      </div><br />-->
                                             
                                      <!--   <div class="section">-->
                                      <!--       <label>Description </label>-->
-                                     <!--       <textarea rows="4" cols="60" name="category_description" >Enter Description Here...</textarea></div>-->
+                                     <!--       <textarea rows="4" cols="60" name="product_description" placeholder="Product Name"></textarea></div>-->
                                       
+                                            <!-- Select Category-->
+                                     <!--        <div class="section">-->
+                                     <!--        <label>Category </label>   -->
+                                     <!--       <select name="category" required/>-->
+                                     <!--       <option value="mens_clothing" selected>Men's Clothing</option>-->
+                                     <!--       <option value="womens_clothing">Women's Clothing</option>-->
+                                     <!--       <option value="computers">Computers & Tablets </option>-->
+                                     <!--       <option value="household_accesories">Household Accesories</option>-->
+                                     <!--       <option value="household_electronics">Household Electronics</option>-->
+                                     <!--       <option value="mens_shoes">Men's Shoes</option>-->
+                                     <!--       <option value="womens_shoes">Womens Shoes</option>-->
+                                     <!--       <option value="sport_shoes">Sporting Shoes</option>-->
+                                            
+                                     <!--       </select>-->
+                                     <!--       </div>-->
 
 
                                          <!--Upload Image *crosses fingers* -->
-                                     <!--       <div class="section "> <label>Upload Image</label><input type="file" name="fileupload" accept="/image/*" />-->
+                                     <!--       <div class="section "> <label>Upload Image</label><input type="file" name="fileupload" accept="image/*" />-->
                                      <!--    </div> <br />-->
                                          
                                      <!--    <div class="section last">-->
-                                     <!--     <div><a class="uibutton loading"  title="Saving"  rel="1">Submit</a> <a class="uibutton special "   onclick="$('#add').get(0).reset();" title="Reset  Form"   >Clear Form</a>   -->
+                                     <!--     <a class="uibutton submit_form" >submitForm</a>-->
+                                     <!--     <a class="uibutton special "   onclick="$('#add').get(0).reset();" title="Reset  Form"   >Clear Form</a>   -->
                                      <!--    </div>-->
                                      <!-- </form>-->
-                                     
-                                     <%= form_for :category, url: categories_path do |f| %>
+                                     <%= form_for :product, url: products_path do |f| %>
                                           <p>
                                             <%= f.label :Name %><br>
-                                            <%= f.text_field :Category_Name %>
+                                            <%= f.text_field :Product_Name %>
                                           </p>
                                          
                                           <p>
                                             <%= f.label :Description %><br>
                                             <%= f.text_area :Description %>
+                                          </p>
+                                          
+                                          <p>
+                                            <%= f.label :Price %><br>
+                                            <%= f.number_field :Price %>
+                                          </p>
+                                          
+                                          <p>
+                                             <%= f.select(:Category_ID, @category_options) %>
+                                          </p>
+                                          
+                                          <p>
+                                                
+                                                <%= f.file_field :Image %>
+                                               
+                                               
                                           </p>
                                          
                                           <p>

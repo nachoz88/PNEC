@@ -80,7 +80,8 @@
         </head>        
          <body class="dashborad">        
         <div id="alertMessage" class="error"></div> 
-     <%= render "layouts/header" %>
+                       
+         <%= render "layouts/header" %>
           
             
             <div id="content">
@@ -131,7 +132,7 @@
 
 
                                          <!--Upload Image *crosses fingers* -->
-                                     <!--       <div class="section "> <label>Upload Image</label><input type="file" name="fileupload" accept="/image/*" />-->
+                                     <!--       <div class="section "> <label>Upload Image</label><input type="file" name="fileupload" accept="image/*" />-->
                                      <!--    </div> <br />-->
                                          
                                      <!--    <div class="section last">-->
@@ -139,15 +140,29 @@
                                      <!--    </div>-->
                                      <!-- </form>-->
                                      
-                                     <%= form_for :category, url: categories_path do |f| %>
-                                          <p>
+                                     <%= form_for :product, url: product_path(@product), method: :patch do |f| %>
+                                     <p>
                                             <%= f.label :Name %><br>
-                                            <%= f.text_field :Category_Name %>
+                                            <%= f.text_field :Product_Name %>
                                           </p>
                                          
                                           <p>
                                             <%= f.label :Description %><br>
                                             <%= f.text_area :Description %>
+                                          </p>
+                                          
+                                          <p>
+                                            <%= f.label :Price %><br>
+                                            <%= f.number_field :Price %>
+                                          </p>
+                                          
+                                          <p>
+                                             <%= f.select(:Category_ID, @category_options) %>
+                                          </p>
+                                          
+                                          <p>
+                                               <%= f.file_field :Image %>
+                                               
                                           </p>
                                          
                                           <p>

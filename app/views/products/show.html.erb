@@ -80,8 +80,7 @@
         </head>        
          <body class="dashborad">        
         <div id="alertMessage" class="error"></div> 
-     <%= render "layouts/header" %>
-          
+          <%= render "layouts/header" %>
             
             <div id="content">
                 <div class="inner">
@@ -131,7 +130,7 @@
 
 
                                          <!--Upload Image *crosses fingers* -->
-                                     <!--       <div class="section "> <label>Upload Image</label><input type="file" name="fileupload" accept="/image/*" />-->
+                                     <!--       <div class="section "> <label>Upload Image</label><input type="file" name="fileupload" accept="image/*" />-->
                                      <!--    </div> <br />-->
                                          
                                      <!--    <div class="section last">-->
@@ -139,21 +138,33 @@
                                      <!--    </div>-->
                                      <!-- </form>-->
                                      
-                                     <%= form_for :category, url: categories_path do |f| %>
+                                 
                                           <p>
-                                            <%= f.label :Name %><br>
-                                            <%= f.text_field :Category_Name %>
+                                            <strong>Name:</strong>
+                                              <%= @product.Product_Name %>
                                           </p>
                                          
                                           <p>
-                                            <%= f.label :Description %><br>
-                                            <%= f.text_area :Description %>
+                                            <strong>Description:</strong>
+                                              <%= @product.Description %>
                                           </p>
-                                         
+                                         <p>
+                                            <strong>Price:</strong>
+                                              <%= @product.Price %>
+                                          </p>
+                                          
                                           <p>
-                                            <%= f.submit %>
+                                            <strong>Category:</strong>
+                                              <%= @product.Category_ID %>
                                           </p>
-                                     <% end %>
+                                          <p>
+                                            <strong>Image:</strong>
+                                             <%= image_tag @product.Image.url %>
+                                          </p>
+                                          <p>
+                                            
+                                          </p>
+                                     
                                     </div>
                                   </div>  
                               </div><!--tab1-->

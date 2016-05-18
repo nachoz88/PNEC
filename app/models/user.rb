@@ -1,14 +1,10 @@
 class User < ActiveRecord::Base
-    validates :name, presence: true
-    validates :email, presence: true,uniqueness: { case_sensitive: false }
+  
+  # attr_accessible :email, :password, :password_confirmation, :remember_me, :name
 
-    has_secure_password
-    validates :password, presence: true, length: { minimum: 6 }
-    
-    def User.digest(string)
-    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
-                                                  BCrypt::Engine.cost
-    BCrypt::Password.create(string, cost: cost)
-   end
-
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
+         
 end

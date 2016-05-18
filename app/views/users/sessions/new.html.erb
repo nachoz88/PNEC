@@ -6,12 +6,12 @@
         <!--[if lt IE 9]>
           <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
-<link href="css/zice.style.css" rel="stylesheet" type="text/css" />
-<link href="css/icon.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" type="text/css" href="components/tipsy/tipsy.css" media="all"/>
+<link href="/css/zice.style.css" rel="stylesheet" type="text/css" />
+<link href="/css/icon.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="/components/tipsy/tipsy.css" media="all"/>
 <style type="text/css">
 html {
-	background-image: url(images/bg.jpg);
+	background-image: url(/images/bg.jpg);
 	/*background-repeat: repeat-x;*/
 	/*background-size:cover;*/
 }
@@ -37,12 +37,12 @@ html {
          
 <div id="alertMessage" class="error"></div>
 <div id="successLogin"></div>
-<div class="text_success"><img src="images/loadder/loader_green.gif"  alt="ziceAdmin" /><span>Please wait</span></div>
+<div class="text_success"><img src="/images/loadder/loader_green.gif"  alt="ziceAdmin" /><span>Please wait</span></div>
 
 <div id="login" >
   <div class="ribbon"></div>
   <div class="inner">
-  <div  class="logo" ><img src="images/pnec.png" alt="ziceAdmin" /></div>
+  <div  class="logo" ><img src="/images/pnec.png" alt="ziceAdmin" /></div>
   <div class="userbox"></div>
   <div class="formLogin">
 <!--   <form name="formLogin"  id="formLogin" action="#">-->
@@ -78,7 +78,7 @@ html {
 
 
   
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name),html: { id: 'formLogin' })  do |f| %>
 <div class="tip">
      
       <%= f.email_field :email,autofocus: true %>
@@ -104,13 +104,18 @@ html {
                  <li>
       <%= f.submit "Log in",:html => {:id => "but_login"}, class: 'uibutton normal' %>
       </li>
-      <li><a class="uibutton  normal" href="#" id="forgetpass">forgot password</a></li>
+      <!--<li><a class="uibutton  normal" href="#" id="forgetpass">forgot password</a></li>-->
+      
                </ul>
               </div>
             </div>
 </div>
 
     <% end %>
+    <br>
+    <br>
+    <br>
+    <%= render "users/shared/links" %>
   </div>
 </div>
   <div class="clear"></div>
@@ -124,12 +129,11 @@ html {
   <!-- // copyright-->
 </div>
 <!-- Link JScript-->
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="components/effect/jquery-jrumble.js"></script>
-<script type="text/javascript" src="components/ui/jquery.ui.min.js"></script>     
-<script type="text/javascript" src="components/tipsy/jquery.tipsy.js"></script>
-<script type="text/javascript" src="components/checkboxes/iphone.check.js"></script>
-<script type="text/javascript" src="js/login.js"></script>
-
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<script type="text/javascript" src="/components/effect/jquery-jrumble.js"></script>
+<script type="text/javascript" src="/components/ui/jquery.ui.min.js"></script>     
+<script type="text/javascript" src="/components/tipsy/jquery.tipsy.js"></script>
+<script type="text/javascript" src="/components/checkboxes/iphone.check.js"></script>
+<script type="text/javascript" src="/js/login.js"></script>
 </body>
 </html>

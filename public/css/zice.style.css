@@ -1336,7 +1336,7 @@ label.iPhoneCheckLabelOff span {
 	padding: 100px 20px 20px 20px;
 }
 
-#login #session_email, #login #session_password {
+#login #user_email, #login #user_password {
 	font-size: 15px;
 	background-repeat:no-repeat;
 	padding-left: 35px;
@@ -1348,24 +1348,24 @@ label.iPhoneCheckLabelOff span {
 	margin-bottom: 10px;
 	font-family:"Myriad Pro", Arial, Helvetica, sans-serif;
 }
-#login #session_email:focus, #login #session_password:focus {
+#login #user_email:focus, #login #user_password:focus {
 	color:#000;
 }
-#login #session_email {
+#login #user_email {
 	background-image: url(../images/icon/user_.png);
 	background-repeat: no-repeat;
 }
-#login #session_password {
+#login #user_password {
 	background-image: url(../images/icon/pass_.png);
 	background-repeat: no-repeat;
 	/*font-size: 35px;*/
 }
 #login .userbox {
-	height: 260px;
+	height: 300px;
 	/*	background-color: #FFF;*/
 	position: absolute;
 	z-index: 10;
-	width: 418px;
+	width: 430px;
 	background-color: #FFF;
 	background-image: url(../images/loadder/loader_green.gif);
 	background-repeat: no-repeat;

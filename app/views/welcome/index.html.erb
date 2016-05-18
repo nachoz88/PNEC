@@ -52,13 +52,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			  <a class="login" href="login.html">
 				<i class="user"> </i> 
 				<li class="user_desc">My Account</li>
-				  <% if logged_in? %>
-        
-          <li><%= link_to current_user.name, '#' %></li>
-                <%= link_to "Log out", logout_path, method: "delete" %>
-                        <% else %>
-          <li><%= link_to "Log in", login_path %></li>
-        <% end %>
+				  <% if user_signed_in? %>
+  Logged in as <strong><%= current_user.name %></strong>.
+  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+<% else %>
+  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+<% end %>
 			  </a>
 			  <div class="clearfix"> </div>
 		     </ul>
