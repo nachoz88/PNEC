@@ -33,7 +33,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 #for images
 gem 'carrierwave'
+#resizing images
 gem 'mini_magick'
+gem 'rmagick'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

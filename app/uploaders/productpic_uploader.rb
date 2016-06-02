@@ -4,12 +4,13 @@ class ProductpicUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
-  include CarrierWave::MiniMagick
+  require 'carrierwave/processing/rmagick'
+  include CarrierWave::RMagick
 
   # Choose what kind of storage to use for this uploader:
   storage :file
   # storage :fog
-
+  process :resize_to_fill => [300, 300]
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
@@ -18,10 +19,14 @@ class ProductpicUploader < CarrierWave::Uploader::Base
   def store_dir
     'public/myupload'
   end
-  def content_type_whitelist
-    /image\//
+  
+  def extension_white_list
+  %w(jpg jpeg gif png)
   end
-
+  
+  version :thumb do
+  process :resize_to_fill => [50, 50]
+  end
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
   #   # For Rails 3.1+ asset pipeline compatibility:

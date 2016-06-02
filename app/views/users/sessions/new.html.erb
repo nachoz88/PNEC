@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="/components/tipsy/tipsy.css" media="all"/>
 <style type="text/css">
 html {
-	background-image: url(/images/bg.jpg);
+	background-image: url(/images/fc.jpg);
 	/*background-repeat: repeat-x;*/
 	/*background-size:cover;*/
 }
@@ -91,12 +91,13 @@ html {
      
 </div>
 <div style="padding:20px 0px 0px 0px ;">
-            <div style="float:left; padding:0px 0px 2px 0px ;">
-                <%= f.check_box :remember_me ,:html => {:id => "on_off",:class =>"on_off_checkbox"}%>
+           <!-- <div style="float:left; padding:0px 0px 2px 0px ;">-->
+           <!--     <= f.check_box :remember_me ,:html => {:id => "on_off",:class =>"on_off_checkbox"}%>-->
            <!--<input type="checkbox" id="on_off" name="remember" class="on_off_checkbox"  value="1"   />-->
-              <span class="f_help">Remember me</span>
-              </div>
-          <div style="float:right;padding:2px 0px ;">
+           <!--   <span class="f_help">Remember me</span>-->
+           <!--   </div>-->
+           <%= link_to "Sign up", new_user_registration_path, :class => 'f_help'  %> 
+          <div style="float:right;padding:20px 20px ;">
           
           
               <div> 
@@ -115,7 +116,7 @@ html {
     <br>
     <br>
     <br>
-    <%= render "users/shared/links" %>
+    <!--<%= render "users/shared/links" %>-->
   </div>
 </div>
   <div class="clear"></div>
@@ -125,7 +126,7 @@ html {
 <!--Login div-->
 <div class="clear"></div>
 <div id="versionBar" >
-  <div class="copyright" > &copy; Copyright 2012  All Rights Reserved <span class="tip"><a  href="#" title="Zice Admin" >Your company</a> </span> </div>
+  <div class="copyright" > &copy; Copyright 2016  All Rights Reserved <span class="tip"><a  href="#" title="Zice Admin" >PNEC</a> </span> </div>
   <!-- // copyright-->
 </div>
 <!-- Link JScript-->

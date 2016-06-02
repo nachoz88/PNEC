@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   get    'dashboard' => 'welcome#dashboard'
+  get    'home' => 'welcome#index'
  
   # get    'login'   => 'users#sessions#new'
   
@@ -21,9 +22,13 @@ Rails.application.routes.draw do
   resources :categories
 
 
-  resources :products
+  resources :products do
+    collection do
+      get 'findex'
+    end
+  end
 
-  get 'welcome/index'
+  get 'welcome/dashboard'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

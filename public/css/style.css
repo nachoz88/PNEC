@@ -9,9 +9,9 @@ h1, h2, h3 {margin-top: 0;}
 ul, ol {margin: 0;}
 p {margin: 0;}
 html, body{
-   font-family: 'PT Sans Narrow', sans-serif;
+   font-family: Andale mono;
    font-size: 100%;
-   background:#fff; 
+   background:#7A8B8B; 
 }
 body a{
 	transition:0.5s all;
@@ -262,6 +262,7 @@ ul.header_user_info {
 }
 ul.header_user_info a{
 	color:#fff;
+    font-weight:600;
 }
 ul.header_user_info a:hover{
 	color:#fd926d;
@@ -372,7 +373,7 @@ ul.header_user_info li.user_desc{
 .header_bottom {
 	padding: 2em 0;
 }
-.logo h1{
+.logopnec h1{
     font-size:7em;
     text-transform: uppercase;
     margin-bottom: 0;
@@ -382,13 +383,13 @@ ul.header_user_info li.user_desc{
 span.m_1 {
   color:#F9D9BE;
 }
-.logo{
+.logopnec{
 	float:left;
 }
-.logo h1 a{
+.logopnec h1 a{
 	color:#fff;
 }
-.logo h1 a:hover{
+.logopnec h1 a:hover{
    text-decoration:none;
 }
 .menu {
@@ -524,15 +525,15 @@ ul.content-home li .item-html button:hover{
 .middle_content h2{
   color: #000;
   font-size: 69px;
-  font-style: italic;
+  font-style: normal;
   font-weight: 300;
   letter-spacing: -0.06em;
   text-transform: uppercase;
   margin-bottom:0.5em;
 }
 .middle_content p{
-  color: #999;
-  font-size:1.1em;
+  color: #000;
+  font-size:1.3em;
 }
 /*--content--*/
 
@@ -696,6 +697,30 @@ ul.content-home li .item-html button:hover{
 	filter: alpha(opacity=99); /* internet explorer */
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=99)"; /*IE8*/
 }
+.lb-overlay button
+{
+  width: 24%;
+  color: #000;
+  font-size: 1em;
+  background:#F9D9BE;
+  border: 1px solid #555;
+  outline: none;
+  padding: 0.7em;
+  border-radius: 8px;
+    
+    }
+
+.lb-overlay button:active {
+  background-color: #000;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.lb-overlay :hover{
+	background:#000;
+	color:#fff;}
+	
+	
 @-webkit-keyframes fadeInScale {
 0% { -webkit-transform: scale(0.6); opacity: 0; }
 100% { -webkit-transform: scale(1); opacity: 1; }
@@ -941,7 +966,7 @@ a.create:hover, .account-top input[type="submit"]:hover, .register-but form inpu
 }
 .newsletter p {
   font-size: 1.1em;
-  color: #A5A5A5;
+  color: #000;
   line-height: 1.5em;
   margin: 0.8em 0 0;
 }
@@ -1046,14 +1071,14 @@ ul.social li a i.tw{
 	padding: 5em 0 2em;
 }
 .men_banner {
-	background: url(../images/3.jpg) no-repeat center top;
+	/*background: url(../images/3.jpg) no-repeat center top;
 	background-size: cover;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	min-height:225px;
 	text-align: center;
-	padding-top: 3em;
+	padding-top: 3em;*/
 }
 .sidebar_men {
 	margin-right: 1em;
@@ -1764,7 +1789,7 @@ h3.m_1 {
 }
 .middle-side p{
 	font-size:0.95em;
-	color:#999;
+	color:#000;
 	line-height:1.8em;
 }
 a.btn.btn1.btn-primary.btn-normal.btn-inline {
@@ -2274,10 +2299,10 @@ ul.content-home li .item-html h3 span {
 }
 }
 @media (max-width:768px){
-.logo{
+.logopnec{
 	float:none;
 }
-.logo h1 {
+.logopnec h1 {
     font-size: 7em;
     font-weight: bold;
 }
@@ -2423,7 +2448,7 @@ ul.content-home li img {
 .brand_box {
 	margin: 2em 0;
 }
-.logo h1 {
+.logopnec h1 {
   font-size: 5em;
 }
 .banner {
@@ -2479,7 +2504,7 @@ ul.header_user_info {
 	font-size: 1em;
 	letter-spacing: 10px;
 }
-.logo img {
+.logopnec img {
 	width: 150px;
 }
 .cssmenu ul li a {
@@ -2590,7 +2615,7 @@ ul.content-home li .item-html h3 span {
 .lb-album li > a span {
   line-height: 6.5em;
 }
-.logo h1 {
+.logopnec h1 {
   font-size: 3em;
   font-weight: bold;
 }

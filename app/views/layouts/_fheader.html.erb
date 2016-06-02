@@ -1,0 +1,116 @@
+   	  	<div class="header_top">
+   	  	   <div class="header_top_left">
+	  	      <div class="box_11"><a href="checkout.html">
+		      <h4><p>Cart:  (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)</p><%= image_tag("/images/bag.png") %><div class="clearfix"> </div></h4>
+		      <!--<h4><p>Cart:<span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)<#%= link_to  image_tag("/images/bag.png"), cart_items_path %></p></h4>-->
+		      </a></div>
+	         <p class="empty"><a href="javascript:;" class="simpleCart_empty"></a></p> <!--this is where that empty cart link was ...for what? dunno :p -->
+	          <div class="clearfix"> </div>
+	       </div>
+           <div class="header_top_right">
+		  	 <div class="lang_list">
+				<!--<select tabindex="4" class="dropdown">
+				<!--	<option value="" class="label" value=""> KSH</option>-->
+				<!--	<option value="1">$US</option>-->
+				<!--	<option value="2">Euro</option>-->
+				<!--</select>-->-->
+			 </div>
+			 <ul class="header_user_info">
+			  <a class="login" href="login.html">
+				<i class="user"> </i> 
+				<!--<li class="user_desc">My Account</li>-->
+				<% if user_signed_in? %>
+  <strong><%= current_user.name %></strong>.
+  <br>
+  
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'user_desc'  %>
+<% else %>
+  
+  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+<% end %>
+			  </a>
+			  <div class="clearfix">
+			  		<% if user_signed_in? %>
+			  		<%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> 
+			  		<%else %>
+			  		<%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> 
+			  		<% end %></div>
+		     </ul>
+		    <!-- start search-->
+				<div class="search-box">
+				   <div id="sb-search" class="sb-search">
+					  <form>
+						 <input class="sb-search-input" placeholder="Enter your search term..." type="search" name="search" id="search">
+						 <input class="sb-search-submit" type="submit" value="">
+						 <span class="sb-icon-search"> </span>
+					  </form>
+				    </div>
+				 </div>
+				 <!----search-scripts---->
+				 <script src="/js/classie1.js"></script>
+				 <script src="/js/uisearch.js"></script>
+				   <script>
+					 new UISearch( document.getElementById( 'sb-search' ) );
+				   </script>
+					<!----//search-scripts---->
+		            <div class="clearfix"> </div>
+			 </div>
+		     <div class="clearfix"> </div>
+	  </div>
+	  
+             <!--HEADER BOTTOM-->
+             <div class="header_bottom">
+	   <div class="logopnec">
+		  <h1><a href="index.html"><span class="m_1">P</span>NEC</a></h1>
+	   </div>
+   	   <div class="menu">
+	     <ul class="megamenu skyblue">
+			    <li><a class="color2" href="#">HOME</a></li>
+			    <li><%= link_to 'PRODUCTS' , findex_products_path,class:"color4" %></li></li>				
+				<li><a class="color10" href="#">CATEGORIES</a>
+                <div class="megapanel">
+					<div class="row">
+						<div class="col1">
+							<div class="h_nav">
+								<h4><a href="#">Women's Clohing</a></h4>
+                                <h4><a href="#">Men's Clothing</a></h4>
+                                <h4><a href="#">Accessories</a></h4>
+                              
+								<ul>
+									
+								</ul>	
+							</div>							
+						</div>
+						<div class="col1">
+							<div class="h_nav">
+                            <h4><a href="#">Women's Shoes</a></h4>
+							<h4><a href="#">Men's shoes</a></h4>
+                           
+                            <h4><a href="#">Sport shoes</a></h4>
+								
+							</div>							
+						</div>
+						<div class="col2">
+							<div class="h_nav">
+								<h4><a href="#">Home Appliances</a></h4>
+                                <h4><a href="#">Computers and Tablets</a></h4>
+                                <h4><a href="#">Gardening</a></h4>
+								<ul>
+									<li class>
+										<div class="p_left">
+										 
+										</div>
+										<div class="p_right">
+											<!--<h4><a href="#">Denim shirt</a></h4>
+											<span class="item-cat"><small><a href="#">watches</a></small></span>
+											<span class="price">29.99 $</span>--></li>
+                                            </div>
+				<li><a class="color3" href="#">MY ORDERS</a></li>
+				<li><a class="color7" href="#">CONTACT US</a></li>
+				<div class="clearfix"> </div>
+			</ul>
+			</div>
+	        <div class="clearfix"> </div>
+	        </div>
+	    </div>
+   </div>

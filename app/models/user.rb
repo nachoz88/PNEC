@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :item_oders
+  has_many :cart_items
   
   # attr_accessible :email, :password, :password_confirmation, :remember_me, :name
 

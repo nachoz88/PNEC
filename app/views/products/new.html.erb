@@ -89,10 +89,10 @@
 					<div class="topcolumn">
 						<div class="logo"></div>
                             <ul  id="shortcut">
-                                <li> <a href="#" title="Back To home"> <img src="images/icon/shortcut/home.png" alt="home"/><strong>Home</strong> </a> </li>
-                                <li> <a href="#" title="Website Graph"> <img src="images/icon/shortcut/graph.png" alt="graph"/><strong>Graph</strong> </a> </li>
-                                <li> <a href="#" title="Setting" > <img src="images/icon/shortcut/setting.png" alt="setting" /><strong>Setting</strong></a> </li> 
-                                <li> <a href="#" title="Messages"> <img src="images/icon/shortcut/mail.png" alt="messages" /><strong>Message</strong></a><div class="notification" >10</div></li>
+                                <li> <a href="#" title="Back To home"> <img src="/images/icon/shortcut/home.png" alt="home"/><strong>Home</strong> </a> </li>
+                                <li> <a href="#" title="Website Graph"> <img src="/images/icon/shortcut/graph.png" alt="graph"/><strong>Graph</strong> </a> </li>
+                                <li> <a href="#" title="Setting" > <img src="/images/icon/shortcut/setting.png" alt="setting" /><strong>Setting</strong></a> </li> 
+                                <li> <a href="#" title="Messages"> <img src="/images/icon/shortcut/mail.png" alt="messages" /><strong>Message</strong></a><div class="notification" >10</div></li>
                             </ul>
 					</div>
                     <div class="clear"></div>
@@ -156,7 +156,9 @@
                                      <!--     <a class="uibutton special "   onclick="$('#add').get(0).reset();" title="Reset  Form"   >Clear Form</a>   -->
                                      <!--    </div>-->
                                      <!-- </form>-->
-                                     <%= form_for :product, url: products_path do |f| %>
+                                     <%= form_for :product, html: { multipart: true }, url: products_path do |f| %>
+                                        
+                                     
                                           <p>
                                             <%= f.label :Name %><br>
                                             <%= f.text_field :Product_Name %>
@@ -178,13 +180,15 @@
                                           
                                           <p>
                                                 
-                                                <%= f.file_field :Image %>
+                                                
+                                             <%= f.label :Image %><br>
+                                             <%= f.file_field :Image %>
                                                
                                                
                                           </p>
                                          
                                           <p>
-                                            <%= f.submit %>
+                                            <%= f.submit  %>
                                           </p>
                                      <% end %>
                                     </div>
