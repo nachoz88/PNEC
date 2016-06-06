@@ -9,4 +9,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
          
+         
+  def total
+    cart_items.includes(:product).where("User_ID = 1").sum(:Price)
+  end
+        
 end

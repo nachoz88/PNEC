@@ -22,8 +22,9 @@ class CartItemsController < ApplicationController
     end
     
     def index
-        @cart_items = CartItem.where(:User_ID => current_user.id)
-        @total=@cart_items.sum(:Price, :include => "products") 
+        @cart_items = CartItem.includes(:product).where(:User_ID => current_user.id)
+        @total=@cart_items.sum(:Price)
+
     end
     
     def destroy
