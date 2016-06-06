@@ -1,5 +1,20 @@
 class ProductsController < ApplicationController
+    
+
+before_filter :authenticate_user!  => [:findex]
+before_filter :is_admin?, :except => [:findex]
+
+def is_admin?
+  if current_user.role == 2
+    true
+  else
+    redirect_to '/'
+  end
+end
+
+
     def index
+         
         @products = Product.all
     end
     def new
@@ -16,6 +31,7 @@ class ProductsController < ApplicationController
     end
     
     def findex
+        @categories = Category.all
         @products = Product.all
         @total=Product.count
     end

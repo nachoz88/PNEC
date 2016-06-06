@@ -14,9 +14,10 @@
 ActiveRecord::Schema.define(version: 20160518124313) do
 
   create_table "cart_items", primary_key: "Cart_Item_ID", force: :cascade do |t|
-    t.string  "User_ID",    limit: 30, null: false
-    t.string  "Product_ID", limit: 30, null: false
-    t.integer "Quanity",    limit: 4,  null: false
+    t.integer "User_ID",    limit: 4,                                        null: false
+    t.integer "Product_ID", limit: 4,                                        null: false
+    t.integer "Quantity",   limit: 4,                          default: 1
+    t.decimal "Price",                precision: 20, scale: 2, default: 0.0, null: false
   end
 
   create_table "categories", primary_key: "Category_ID", force: :cascade do |t|
@@ -24,10 +25,10 @@ ActiveRecord::Schema.define(version: 20160518124313) do
     t.text   "Description",   limit: 65535, null: false
   end
 
-  create_table "item_orders", id: false, force: :cascade do |t|
-    t.string  "Product_ID", limit: 30, null: false
-    t.string  "Order_ID",   limit: 30, null: false
-    t.integer "Quantity",   limit: 4,  null: false
+  create_table "item_orders", primary_key: "ItemOrder_ID", force: :cascade do |t|
+    t.integer "Product_ID", limit: 4, null: false
+    t.integer "Order_ID",   limit: 4, null: false
+    t.integer "Quantity",   limit: 4, null: false
   end
 
   create_table "orders", primary_key: "Order_ID", force: :cascade do |t|
@@ -68,7 +69,7 @@ ActiveRecord::Schema.define(version: 20160518124313) do
     t.datetime "created_at",                                      null: false
     t.datetime "updated_at",                                      null: false
     t.string   "name",                   limit: 255
-    t.integer  "role",                   limit: 4
+    t.integer  "role",                   limit: 4,   default: 1,  null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

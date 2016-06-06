@@ -8,7 +8,7 @@ class CartItemsController < ApplicationController
            redirect_to '/products/findex'
        else
             @cart_item.save
-            redirect_to '/cart_items/'
+            redirect_to '/cart_items'
         
     end
         
@@ -18,12 +18,12 @@ class CartItemsController < ApplicationController
     
     
     def cartparams
-        params.require(:cart_item).permit(:User_ID, :Product_ID, :Quantity,:Price)
+        params.require(:cart_item).permit(:User_ID, :Product_ID)
     end
     
     def index
         @cart_items = CartItem.where(:User_ID => current_user.id)
-        @total=@cart_items.sum(:Price) 
+        @total=@cart_items.sum(:Price, :include => "products") 
     end
     
     def destroy

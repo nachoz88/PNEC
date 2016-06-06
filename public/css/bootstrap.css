@@ -308,6 +308,7 @@ img {
   vertical-align: middle;
 }
 .img-responsive,
+
 .thumbnail > img,
 .thumbnail a > img,
 .carousel-inner > .item > img,
@@ -331,6 +332,7 @@ img {
   -webkit-transition: all .2s ease-in-out;
           transition: all .2s ease-in-out;
 }
+
 .img-circle {
   border-radius: 50%;
 }

@@ -1,4 +1,15 @@
 class CategoriesController < ApplicationController
+  
+   before_filter :authenticate_user! 
+before_filter :is_admin?
+
+def is_admin?
+  if current_user.role == 2
+    true
+  else
+    redirect_to '/'
+  end
+end
     
     def index
     @categories = Category.all
