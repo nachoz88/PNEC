@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
   
-before_filter :authenticate_user! ,:except => [:index]
-before_filter :is_admin?, :except => [:index]
+before_filter :authenticate_user! ,:except => [:index,:contactus] 
+before_filter :is_admin?, :except => [:index,:contactus]
 
 def is_admin?
   if current_user.role == 2
@@ -12,9 +12,12 @@ def is_admin?
 end
 
   def index
-    @categories = Category.all
+   @products = Product.all
   end
   
   def dashboard
+  end
+  
+  def contactus
   end
 end

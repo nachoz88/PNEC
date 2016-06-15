@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   devise_for :users
   get    'dashboard' => 'welcome#dashboard'
   get    'home' => 'welcome#index'
+  get    'contactus' => 'welcome#contactus'
+  
  
   # get    'login'   => 'users#sessions#new'
   
@@ -13,8 +15,12 @@ Rails.application.routes.draw do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
 
-  resources :orders
-
+  resources :orders do
+  collection do
+      get 'findex'
+      
+    end
+end
   resources :item_orders
 
   resources :cart_items
@@ -25,6 +31,10 @@ Rails.application.routes.draw do
   resources :products do
     collection do
       get 'findex'
+      
+    end
+    member do
+      get 'fshow'
     end
   end
 

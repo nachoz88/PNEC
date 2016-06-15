@@ -12,7 +12,7 @@ $(document).ready(function()
 	var strPassword;
 	var charPassword;
 	var complexity = $("#complexity");
-	var minPasswordLength = 8;
+	var minPasswordLength = 6;
 	var baseScore = 0, score = 0;
 	
 	var num = {};
@@ -117,19 +117,19 @@ function outputResult()
 	}
 	else if (score<50)
 	{
-		complexity.html("Weak").removeClass("strong stronger strongest").addClass("weak");
+		complexity.html("Password Strength: Weak").removeClass("strong stronger strongest").addClass("weak");
 	}
 	else if (score>=50 && score<75)
 	{
-		complexity.html("Average").removeClass("stronger strongest").addClass("strong");
+		complexity.html("Password Strength: Average").removeClass("stronger strongest").addClass("strong");
 	}
 	else if (score>=75 && score<100)
 	{
-		complexity.html("Strong!").removeClass("strongest").addClass("stronger");
+		complexity.html("Password Strength: Strong!").removeClass("strongest").addClass("stronger");
 	}
 	else if (score>=100)
 	{
-		complexity.html("Secure!").addClass("strongest");
+		complexity.html("Password Strength: Secure!").addClass("strongest");
 	}
 	
 	/*

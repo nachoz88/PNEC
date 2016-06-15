@@ -1,8 +1,8 @@
 class ProductsController < ApplicationController
     
 
-before_filter :authenticate_user!  => [:findex]
-before_filter :is_admin?, :except => [:findex]
+before_filter :authenticate_user! , :except => [:findex,:fshow]
+before_filter :is_admin?, :except => [:findex,:fshow]
 
 def is_admin?
   if current_user.role == 2
@@ -31,11 +31,20 @@ end
     end
     
     def findex
-        @categories = Category.all
-        @products = Product.all
+        if params[:cat]!=''
+                 @products = Product.includes(:category).where(:Category_ID => params[:cat])
+                 @cat_selected=Category.where(:Category_ID => params[:cat]).first
+                 
+        else
+               @products = Product.all
+        end
         @total=Product.count
     end
     
+    def fshow
+        @product = Product.includes(:category).find(params[:id])
+        @rel_products = Product.includes(:category).where(:Category_ID => @product.Category_ID).where.not(:Product_ID => @product.Product_ID) 
+    end
     def update
              @product = Product.find(params[:id])
          @product.Image = params[:file]
@@ -60,7 +69,7 @@ end
     @product.Image = params[:file]
     @product.Status=1
     @product.save
-    redirect_to '/dashboard'
+    redirect_to '/products'
     end
     def product_params
     params.require(:product).permit(:Product_Name, :Description, :Price, :Category_ID, :Image, :Status)

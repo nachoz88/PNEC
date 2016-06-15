@@ -1,0 +1,120 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Watches an E-Commerce online Shopping Category Flat Bootstrap Responsive Website Template| Men :: w3layouts</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Watches Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href="/css/bootstrap.css" rel='stylesheet' type='text/css' />
+<!--<link href="/css/materialize.min.css" rel='stylesheet' type='text/css' />-->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!-- Custom Theme files -->
+<link href="/css/style.css" rel='stylesheet' type='text/css' />
+<link href="/css/component.css" rel='stylesheet' type='text/css' />
+<!-- Custom Theme files -->
+<!--webfont-->
+<link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Dorsa' rel='stylesheet' type='text/css'>
+<!--<script type="text/javascript" src="/js/jquery-1.11.1.min.js"></script>-->
+
+<!-- start menu -->
+<link href="/css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<!--<script type="text/javascript" src="/js/materialize.min.js" ></script>-->
+<script type="text/javascript" src="/js/megamenu.js"></script>
+<script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
+<script src="/js/jquery.easydropdown.js"></script>
+<script src="/js/simpleCart.min.js"> </script>
+</head>
+<body>
+	<div class="men_banner">
+   	  <div class="container">
+   	  	<%= render "layouts/fheader" %>
+   <div class="men">
+    <div class="container">
+      <h3> MY ORDERS </h3>
+    	<table class="table table-hover">
+  <thead>
+    <tr>
+      
+      <th>Order ID</th>
+      <th>Order Status</th></th>
+      <th>Order Date & Time</th>
+      <th>Total Price</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <% @orders.each do |order| %>
+    <tr>
+      
+      <td><%= order.Order_ID %></td>
+      <td>
+        <% if order.Order_Status ==1 %>
+          Complete
+         <% else %>
+         Pending
+         <% end %>
+      </td>
+      <td><%= order.Order_Date %></td>
+      <td><%= number_to_currency(order.Total_Price,:unit => 'Ksh ') %></td>
+    <td> <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target='#<%=order.Order_ID %>'>Details</button></td>     
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+    </div>
+   </div>
+  
+<% @orders.each do |order| %>
+<!-- Modal -->
+<div id="<%=order.Order_ID %>" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Order ID :<%= order.Order_ID %></h4>
+      </div>
+      <div class="modal-body">
+        <table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Product Name</th>
+      <th>Quantity</th>
+      <th>Unit Price</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+        <% order.item_orders.each do |item| %>
+    <tr>
+      <th ><%= item.product.Product_Name %></th>
+      <td><%= item.quantity %></td>
+      <td><%= item.price %></td>
+      <td><%= item.price * item.quantity %></td>
+    </tr>
+      <% end %>
+  </tbody>
+</table>
+        <p></p>
+         
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+ <% end %>
+ 
+   <%= render "layouts/ffooter" %>
+</body>

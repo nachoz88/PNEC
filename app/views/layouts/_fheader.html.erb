@@ -1,8 +1,11 @@
    	  	<div class="header_top">
    	  	   <div class="header_top_left">
-	  	      <div class="box_11"> <h4></h4> <%= link_to   image_tag("/images/bag.png") + " Cart" , cart_items_path %></h4>
-		      
-		      <!--<h4><p>Cart:<span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)<#%= link_to  image_tag("/images/bag.png"), cart_items_path %></p></h4>-->
+	  	      <div class="box_11">  
+		      <% if user_signed_in? %>
+		    <%= link_to  image_tag("/images/bag.png"), cart_items_path %>   Cart : <%= number_to_currency(current_user.cart_total, :unit => ' Ksh ') %>  ( <%=current_user.cart_count %> ) 
+		      <%else%>
+		      Sign in to view cart
+		      <%end%>
 		      </div>
 	         <p class="empty"><a href="javascript:;" class="simpleCart_empty"></a></p> <!--this is where that empty cart link was ...for what? dunno :p -->
 	          <div class="clearfix"> </div>
@@ -73,19 +76,18 @@
 	   </div>
    	   <div class="menu">
 	     <ul class="megamenu skyblue">
-	     <li class="active grid"><a class="color3" href="index.html">HOME</a></li>
-			<li><%= link_to 'PRODUCTS' , findex_products_path,class:"color4" %></li></li>
+	     <li class="active grid"><a class="color3" href="/">HOME</a></li>
+			<li><%= link_to 'PRODUCTS' , findex_products_path(:cat =>''),class:"color4" %></li></li>
 			<li><a class="color4" href="#">CATEGORIES</a>
 				<div class="megapanel" >
 					<div class="row" >
 						<div class="col1">
 							<div class="h_nav">
-								
+							
 								<ul>
 									<% @categories.each do |category| %>
-									<li><a href="">
-									<%= category.Category_Name %>
-									</a></li>
+									<li><%= link_to category.Category_Name , findex_products_path(:cat => category.Category_ID)  %>
+									</li>
 							
 									<% end %>
 								</ul>	
@@ -95,9 +97,10 @@
 							</div>												
 						</div>
 					  
-				</li>				
-				<li><a class="color10" href="brands.html">MY ORDERS</a></li>
-				<li><a class="color3" href="index.html">ABOUT</a></li>
+				</li>	
+				<li><%= link_to "MY ORDERS" , findex_orders_path ,:class => "color10" %>
+				<!--<li><a class="color10" href="brands.html"></a></li>-->
+				<!--<li><a class="color3" href="index.html">ABOUT</a></li>-->
 				
 				<div class="clearfix"> </div>
 			</ul>

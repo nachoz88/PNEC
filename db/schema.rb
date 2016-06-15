@@ -11,13 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160518124313) do
+ActiveRecord::Schema.define(version: 20160610042336) do
 
   create_table "cart_items", primary_key: "Cart_Item_ID", force: :cascade do |t|
-    t.integer "User_ID",    limit: 4,                                        null: false
-    t.integer "Product_ID", limit: 4,                                        null: false
-    t.integer "Quantity",   limit: 4,                          default: 1
-    t.decimal "Price",                precision: 20, scale: 2, default: 0.0, null: false
+    t.integer "User_ID",    limit: 4,             null: false
+    t.integer "Product_ID", limit: 4,             null: false
+    t.integer "Quantity",   limit: 4, default: 1
   end
 
   create_table "categories", primary_key: "Category_ID", force: :cascade do |t|
@@ -25,11 +24,17 @@ ActiveRecord::Schema.define(version: 20160518124313) do
     t.text   "Description",   limit: 65535, null: false
   end
 
-  create_table "item_orders", primary_key: "ItemOrder_ID", force: :cascade do |t|
-    t.integer "Product_ID", limit: 4, null: false
-    t.integer "Order_ID",   limit: 4, null: false
-    t.integer "Quantity",   limit: 4, null: false
+  create_table "item_orders", force: :cascade do |t|
+    t.integer  "order_id",   limit: 4
+    t.integer  "product_id", limit: 4
+    t.integer  "quantity",   limit: 4
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
+    t.decimal  "price",                precision: 20, scale: 2
   end
+
+  add_index "item_orders", ["order_id"], name: "index_item_orders_on_order_id", using: :btree
+  add_index "item_orders", ["product_id"], name: "index_item_orders_on_product_id", using: :btree
 
   create_table "orders", primary_key: "Order_ID", force: :cascade do |t|
     t.string   "User_ID",      limit: 30,                          null: false
