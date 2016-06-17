@@ -26,30 +26,33 @@
                    
                   <div id="left_menu">
                     <ul id="main_menu" class="main_menu">
-                      <li class="limenu <% if params[:controller]=='welcome'%>select<%end%> " ><%= link_to 'Dashboard' , dashboard_path %></li>
+                <li class="limenu <% if params[:controller]=='welcome'%>select<%end%> " ><%= link_to 'Dashboard' , dashboard_path %></li>
                       
-                      <!-- <li class="limenu" ><a href="table.html"><span class="ico gray shadow  spreadsheet"></span><b>Tables</b> </a></li> -->
-                      <li class="limenu <% if params[:controller]=='categories'%>select<%end%> " ><a href=""><span class="ico gray shadow pictures_folder"></span><b>Categories </b></a>
+               
+                <li class="limenu <% if params[:controller]=='categories'%>select<%end%> " ><a href=""><span class="ico gray shadow pictures_folder"></span><b>Categories </b></a>
                        <ul>
                           <li ><%= link_to 'List Categories' , categories_path %></li>
                           <li ><%= link_to 'Add Category' , new_category_path %></li>
                          
                                  </ul></li>
-                                 <li class="limenu <% if params[:controller]=='products'%>select<%end%> " ><a href=""><span class="ico gray shadow pictures_folder"></span><b>Products </b></a>
-                       <ul>
-                          <li ><%= link_to 'List Product' , products_path %></li>
-                          <li ><%= link_to 'Add Product' , new_product_path %></li></li>
-                                 </ul></li>
-                                 <li class="limenu <% if params[:controller]=='orders' %>select<%end%> "  ><a href="categories.html"><span class="ico gray shadow pictures_folder"></span><b>Orders </b></a>
-                       <ul>
-                          <li ><%= link_to 'Orders' , orders_path %></li>
-                          </li>
-                                 </ul></li>
+                <li class="limenu <% if params[:controller]=='products'%>select<%end%> " ><a href=""><span class="ico gray shadow pictures_folder"></span><b>Products </b></a>
+                        <ul>
+                        <li ><%= link_to 'List Product' , products_path %></li>
+                        <li ><%= link_to 'Add Product' , new_product_path %></li></li>
+                        </ul></li>
+                        
+                <li class="limenu <% if params[:controller]=='orders' %>select<%end%> "  ><a href="categories.html"><span class="ico gray shadow pictures_folder"></span><b>Orders </b></a>
+                        <ul>
+                        <li ><%= link_to 'Orders' , orders_path %></li>
+                        </li>
+                        </ul></li>
+                <li class="limenu" ><a href="<% root_path %>"><span class="ico gray shadow pictures_folder"></span><b>To Shop</a></li>
+                        
                                  
 
                       
                       
-                      <!-- <li class="limenu" ><a href="typography.html"><span class="ico gray  shadow paragraph_align_left"></span><b>Typography</b></a></li> -->
+                       <!--<li class="limenu" ><a href="typography.html"><span class="ico gray  shadow paragraph_align_left"></span><b>Typography</b></a></li> -->
                       <!-- <li class="limenu" ><a href="inelement.html"><span class="ico gray shadow abacus"></span><b>Interface elements </b></a></li> -->
                       <!-- <li class="limenu" ><a href="map.html"><span class="ico gray shadow  location"></span><b>Map location </b></a></li> -->
                       <!-- <li class="limenu" ><a href="icon.html"><span class="ico gray  shadow satellite"></span><b>Icon and Button </b></a></li> -->
