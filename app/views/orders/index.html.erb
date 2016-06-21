@@ -123,9 +123,9 @@
       
       <th><div class="th_wrapp">User</div></th>
       <th><div class="th_wrapp">Date</div></th>
-      <th><div class="th_wrapp">Price</div></th>
+      <th><div class="th_wrapp">Total Price</div></th>
       <th><div class="th_wrapp">Status</div></th>
-      <th><div class="th_wrapp">Management</div></th>
+      <th><div class="th_wrapp">Actions</div></th>
       
       
     </tr>
@@ -133,7 +133,7 @@
   <tbody>
      <% @orders.each do |order| %>
     <tr>
-      <td ><%= order.User_ID %></td>
+      <td ><%= order.user.name %></td>
       <td ><%= order.Order_Date %></td>
       <td ><%= order.Total_Price %></td>
       <td > <% if  order.Order_Status==1 %> 
@@ -148,8 +148,8 @@
           </td>
        <td >
                                       
-                                          <%= link_to image_tag("/images/icon/color_18/cancel.png",border: 0) %>
-                                          <%= link_to image_tag("/images/icon/color_18/info.png",border: 0) %>
+                                         
+                                          <%= link_to image_tag("/images/icon/color_18/info.png",border: 0), order_path(order) %>
                                           
                                               
                                           

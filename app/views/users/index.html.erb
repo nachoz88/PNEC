@@ -100,7 +100,7 @@
                     
 
                   <div class="onecolumn" >
-                  <div class="header"><span ><span class="ico  gray arrow_bidirectional"></span> PRODUCTS</span> </div><!-- End header --> 
+                  <div class="header"><span ><span class="ico  gray arrow_bidirectional"></span> USERS</span> </div><!-- End header --> 
                   <div class="clear"></div>
                   <div class="content" >
                   
@@ -115,10 +115,7 @@
                           
                           <div id="tab2" class="tab_content"> 
                             <div class="load_page">
-                              <ul class="uibutton-group">
-                                    <li><%= link_to 'Add Product' , new_product_path,class:"uibutton icon add" %></li>
-                                    
-                              </ul>
+                             
                               <form>
                 <div class="tableName toolbar">
                
@@ -126,14 +123,14 @@
   <thead>
     <tr>
       
-      <th><div class="th_wrapp"></div></th>
+      <th><div class="th_wrapp">Name</div></th>
       
  
-      <th><div class="th_wrapp">Description</div></th>
-      <th><div class="th_wrapp">Category</div></th>
-      <th><div class="th_wrapp">Price</div></th>
+      <th><div class="th_wrapp">Email</div></th>
+      <th><div class="th_wrapp">Role</div></th>
+      <th><div class="th_wrapp">Created At</div></th>
       
-      <th width="199" >Management</th>
+      <th width="199" >Actions</th>
         
                       
 
@@ -144,17 +141,21 @@
     </tr>
   </thead>
   <tbody>
-     <% @products.each do |product| %>
+     <% @users.each do |user| %>
     <tr >
     	 
-    <td  ><%= image_tag product.Image.url if product.Image.present? %></br><%= product.Product_Name %></td>
+   
  
 
-      <td ><%= product.Description %></td>
-      <td ><%= product.category.Category_Name %></td>
-      <td ><%= product.Price %></td>
-      <td><%= link_to image_tag("/images/icon/icon_edit.png",border: 0), edit_product_path(product) %>
-      <%= link_to image_tag("/images/icon/color_18/info.png",border: 0) ,product_path(product) %></td>
+      <td ><%= user.name %></td>
+      <td ><%= user.email %></td>
+      <% if user.role==1 %>
+      <td >Customer</td>
+       <% else %>
+      <td> Administrator</td>
+        <% end %>
+        <td ><%= user.created_at %></td>
+      <td>  <%= link_to image_tag("/images/icon/color_18/info.png",border: 0), user_path(user) %> </td>
 
     </tr>
   <% end %>

@@ -16,7 +16,11 @@ end
 
     
     def index
-    @orders = Order.all
+    @orders = Order.includes(:user).all
+    end
+    def show
+      @order=Order.includes(:user,:item_orders).find(params[:id])
+      @item_count=@order.item_orders.count
     end
     def findex
        @orders=Order.includes(:item_orders).where(:User_ID => current_user.id)

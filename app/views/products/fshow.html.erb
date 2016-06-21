@@ -90,16 +90,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<!--	<li><a href="#">32</a></li>-->
 				<!--	<li><a href="#">34</a></li>-->
 				<!--</ul>-->
-				<div class="quantity_box">
+				<!--<div class="quantity_box">-->
 				
-				    <ul class="single_social">
-						<li><a href="#"><i class="fb1"> </i> </a></li>
-						<li><a href="#"><i class="tw1"> </i> </a></li>
-						<li><a href="#"><i class="g1"> </i> </a></li>
-						<li><a href="#"><i class="linked"> </i> </a></li>
-		   		    </ul>
-		   		    <div class="clearfix"></div>
-	   		    </div>
+				<!--    <ul class="single_social">-->
+				<!--		<li><a href="#"><i class="fb1"> </i> </a></li>-->
+				<!--		<li><a href="#"><i class="tw1"> </i> </a></li>-->
+				<!--		<li><a href="#"><i class="g1"> </i> </a></li>-->
+				<!--		<li><a href="#"><i class="linked"> </i> </a></li>-->
+		  <!-- 		    </ul>-->
+		  <!-- 		    <div class="clearfix"></div>-->
+	   <!--		    </div>-->
 	   		    <% if user_signed_in? %>
 								<span  class="btn btn-primary btn-normal btn-inline btn_form button item_add item_1">	   <%= button_to "ADD TO CART", cart_items_path(:cart_item => {:User_ID => current_user.id, :Product_ID => @product.Product_ID}), :method =>:post, :class => "btn btn-primary btn-normal btn-inline" %></span>
 				<%end%>

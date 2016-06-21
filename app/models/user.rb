@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :orders
   has_many :item_oders
   has_many :cart_items
 

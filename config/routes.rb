@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   devise_for :users
+  
+  
   get    'dashboard' => 'welcome#dashboard'
   get    'home' => 'welcome#index'
   get    'contactus' => 'welcome#contactus'
@@ -14,6 +16,9 @@ Rails.application.routes.draw do
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
+
+  get 'users/' => 'users#index'
+  get 'users/:id' => 'users#show', :as => :user
 
   resources :orders do
   collection do
