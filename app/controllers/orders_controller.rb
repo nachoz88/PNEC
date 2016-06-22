@@ -26,7 +26,24 @@ end
        @orders=Order.includes(:item_orders).where(:User_ID => current_user.id)
     end
     def create
-      if  @orders=Order.new(order_params)
+      
+      amount = current_user.cart_total.to_i*100
+       # Create the customer in Stripe
+    customer = Stripe::Customer.create(
+      email: params[:stripeEmail],
+      card: params[:stripeToken]
+    )
+ 
+    # Create the charge using the customer data returned by Stripe API
+    charge = Stripe::Charge.create(
+      customer: customer.id,
+      amount: amount,
+      description: 'PNEC',
+      currency: 'ksh'
+    )
+ 
+      
+      if  @orders=Order.new(:User_ID => current_user.id, :Total_Price => current_user.cart_total)
         @orders.Order_Date=Time.now
         @orders.Order_Status=1
        else

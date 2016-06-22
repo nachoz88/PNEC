@@ -21,7 +21,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--webfont-->
 <link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
 <link href='//fonts.googleapis.com/css?family=Dorsa' rel='stylesheet' type='text/css'>
-<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 <!-- start menu -->
 <link href="css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
 <script type="text/javascript" src="js/megamenu.js"></script>
@@ -98,7 +99,79 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				
 					
 					
-							<span class = "btn btn1 btn-primary btn-normal btn-inline">	 <%= button_to "Place Order", orders_path(:orders => {:User_ID => current_user.id,:Total_Price => current_user.cart_total}), :method =>:post,:class => "btn btn1 btn-primary btn-normal btn-inline"  %></span>
+ <button type="button" class="btn btn1 btn-primary btn-normal btn-inline" data-toggle="modal" data-target='#order'>CHECKOUT</button>
+ 
+ <div id="order" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Order Confirmation and Payment</h4>
+      </div>
+      <div class="modal-body">
+        <table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Product Name</th>
+      <th>Quantity</th>
+      <th>Unit Price</th>
+      <th>Sub-Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+        <% @cart_items.each do |item| %>
+    <tr>
+      <th ><%= item.product.Product_Name %></th>
+      <td><%= item.Quantity %></td>
+      <td><%= number_to_currency(item.product.Price, :unit => 'Ksh ') %></td>
+      <td><%= number_to_currency(item.product.Price * item.Quantity, :unit => 'Ksh ') %></td>
+    </tr>
+      <% end %>
+  </tbody>
+  
+  
+  
+
+
+
+</table>
+      <p>
+      	
+      </p>
+         
+      </div>
+       
+      <div class="modal-footer">
+      	
+      <span style="padding-bottom:30px;">	Total Amount : <%= number_to_currency(current_user.cart_total, :unit => 'Ksh ') %></span>
+      	
+      
+      	 <%= form_tag orders_path do -%>
+ 
+ <script src="https://checkout.stripe.com/checkout.js" class="stripe-button "
+    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+    data-description="PNEC Watches"
+    data-amount="<%= current_user.cart_total * 100 %> ">
+  </script>
+<% end %>
+<br>
+      	<h5>use card number: 4242 4242 4242 4242, with any 3-digit CVC.</h5>
+      	<br>
+      	<br>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+ 
+
+
 
 			 <!--<div class="total-item">-->
 				<!-- <h3>OPTIONS</h3>-->

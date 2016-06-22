@@ -11,7 +11,7 @@ gem 'sqlite3'
 
 gem 'bcrypt', '~> 3.1.7'
 # 
-
+gem 'stripe'
 
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
