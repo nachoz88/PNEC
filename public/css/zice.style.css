@@ -1365,7 +1365,7 @@ label.iPhoneCheckLabelOff span {
 	/*	background-color: #FFF;*/
 	position: absolute;
 	z-index: 10;
-	width: 430px;
+	width: 43px;
 	background-color: #FFF;
 	background-image: url(../images/loadder/loader_green.gif);
 	background-repeat: no-repeat;
@@ -1947,7 +1947,7 @@ a#hide_menu:hover, a#show_menu:hover, a#show_menu_icon:hover, a#hide_menu_icon:h
 #content .inner .logo {
 	float: left;
 	padding: 45px 0 0 0;
-	background-image: url(../images/logo/logo_admin.png);
+	background-image: url(../images/pnec.png);
 	width: 191px;
 	height: 44px;
 	background-repeat: no-repeat;

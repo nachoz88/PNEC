@@ -16,6 +16,11 @@ end
   end
   
   def dashboard
+    @order_count=Order.all.count
+    @product_count=Product.all.count
+    @user_count=User.all.count
+    @categories=Category.all
+    
   end
   
   def contactus

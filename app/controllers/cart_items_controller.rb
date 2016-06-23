@@ -22,8 +22,8 @@ class CartItemsController < ApplicationController
     def index
         @categories = Category.all
         @cart_items = CartItem.includes(:product).where(:User_ID => current_user.id)
-        # @order = Order.new
-        # @order.item_orders.new
+        
+       
 
     end
     def update

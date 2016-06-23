@@ -1,8 +1,10 @@
+
    	  	<div class="header_top">
    	  	   <div class="header_top_left">
 	  	      <div class="box_11">  
 		      <% if user_signed_in? %>
-		    <%= link_to  image_tag("/images/bag.png"), cart_items_path %>   Cart : <%= number_to_currency(current_user.cart_total, :unit => ' Ksh ') %>  ( <%=current_user.cart_count %> ) 
+		      <a href ="<%= cart_items_path %>" > <%= image_tag("/images/bag.png") %>  Cart : <%= number_to_currency(current_user.cart_total, :unit => ' Ksh ') %>  ( <%=current_user.cart_count %> ) </a>
+		     
 		      <%else%>
 		      Sign in to view cart
 		      <%end%>
@@ -114,3 +116,5 @@
 	        </div>
 	    </div>
    </div>
+   
+   

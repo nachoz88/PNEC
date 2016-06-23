@@ -30,6 +30,16 @@ body a{
 	text-align: center;
 	padding-top:1em;
 }
+.bannersmall {
+	background: url(../images/3.jpg) no-repeat center top;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	min-height:200px;
+	text-align: center;
+	padding-top:1em;
+}
 .cartimage {
 	/*display: block;*/
  	max-width:100px;

@@ -155,11 +155,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button "
     data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
     data-description="PNEC Watches"
-    data-amount="<%= current_user.cart_total * 100 %> ">
+    data-amount="">
   </script>
 <% end %>
 <br>
-      	<h5>use card number: 4242 4242 4242 4242, with any 3-digit CVC.</h5>
+      	<h5><span style="color:red">use card number: 4242 4242 4242 4242, with any 3-digit CVC.</span></h5>
       	<br>
       	<br>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
