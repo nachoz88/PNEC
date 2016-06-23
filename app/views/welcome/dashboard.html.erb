@@ -83,17 +83,7 @@
         <%= render "layouts/header" %>
           
             
-            <div id="content">
-                <div class="inner">
-					<div class="topcolumn">
-						<div class="logo"></div>
-                            <ul  id="shortcut">
-                                <li> <a href="#" title="Back To home"> <img src="images/icon/shortcut/home.png" alt="home"/><strong>Home</strong> </a> </li>
-                                <li> <a href="#" title="Website Graph"> <img src="images/icon/shortcut/graph.png" alt="graph"/><strong>Graph</strong> </a> </li>
-                                <li> <a href="#" title="Setting" > <img src="images/icon/shortcut/setting.png" alt="setting" /><strong>Setting</strong></a> </li> 
-                                <li> <a href="#" title="Messages"> <img src="images/icon/shortcut/mail.png" alt="messages" /><strong>Message</strong></a><div class="notification" >10</div></li>
-                            </ul>
-					</div>
+            
                     <div class="clear"></div>
                     
                    
@@ -104,8 +94,7 @@
                         <div class="content" > <br  class="clear"/>
                             <div class="grid1 rightzero">
                                 <div class="shoutcutBox"> <span class="ico color chat-exclamation"></span> <strong><%= @order_count %></strong> <em>Complete Orders</em> </div>
-                                <div class="breaks"><span></span></div>
-                                <!-- // breaks -->
+            
                                 <div class="shoutcutBox" > <span class="ico color item"></span> <strong><%= @product_count %></strong> <em> Watches</em> </div>
                                 <div class="shoutcutBox"> <span class="ico color group"></span> <strong><%= @user_count %></strong> <em>Users</em> </div>
                                 <!--<div class="shoutcutBox"> <span class="ico color emoticon_grin"></span> <strong>152</strong> <em>New  Register </em> </div>-->
@@ -114,9 +103,9 @@
                                 <!--<div class="shoutcutBox"> <span class="ico color emoticon_in_love"></span> <strong>359</strong> <em>Today view pages</em> </div>-->
                                 <!--<div class="shoutcutBox last"> <span class="ico color connect"></span> <strong>152</strong> <em>user online </em> </div>-->
                             </div>
-                            <div class="boxtitle min">website status</div>
+                            
                             <div  class="grid2">
-                                <table class="chart-pie" style="width : 100%;">
+                                <table class="chart-pie" style="width : 60%;">
                                     <thead>
                                         <tr>
                                             <th></th>
@@ -137,7 +126,7 @@
                                     </tbody>
                                 </table>
                                 <div class="chart-pie-shadow" ></div>
-                                <div class="chart_title"><span>Pages is popular  in your web</span></div>
+                                <div class="chart_title"><span>Categories</span></div>
                             </div>
                             <div class="clear"></div>
                         </div>
