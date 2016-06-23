@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+   
+    
+    <p>
+    Dear Customer, <br>
+    
+      Stripe has successfully proccesed your payment!
+      
+    </p>
+    
+    <p> Order ID : <%= @order_id %></p>
+    
+    <p> Total Charge : <%= number_to_currency(@total, :unit => 'Ksh ') %></p>
+    
+    
+    <p>Thanks for shopping with us and have a great day!</p>
+    <br>
+    <br>
+    <p>
+    <%= image_tag attachments['pnec.png'].url %>
+    </p>
+  </body>
+</html>
