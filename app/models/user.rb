@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
      cart_items.includes(:product).where(:User_ID => self.id ).sum("Price * Quantity")
   end
    def cart_count
-     cart_items.includes(:product).where(:User_ID => self.id ).count * cart_items.includes(:product).where(:User_ID => self.id ).sum(:Quantity)
+     cart_items.includes(:product).where(:User_ID => self.id ).sum(:Quantity)
   end
         
 end

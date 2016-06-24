@@ -29,7 +29,7 @@
                 <li class="limenu <% if params[:controller]=='welcome'%>select<%end%> " ><%= link_to 'Dashboard' , dashboard_path %></li>
                       
                
-                <li class="limenu <% if params[:controller]=='categories'%>select<%end%> " ><a href="categories"><span class="ico gray shadow pictures_folder"></span><b>Categories </b></a>
+                <li class="limenu <% if params[:controller]=='categories'%>select<%end%> " ><a href="/categories"><span class="ico gray shadow pictures_folder"></span><b>Categories </b></a>
                        <ul>
                           <li ><%= link_to 'List Categories' , categories_path %></li>
                           <li ><%= link_to 'Add Category' , new_category_path %></li>

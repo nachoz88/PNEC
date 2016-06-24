@@ -12,14 +12,20 @@ def is_admin?
 end
 
   def index
-   @products = Product.all
+   @products = Product.where(:Status =>1)
   end
   
   def dashboard
     @order_count=Order.all.count
-    @product_count=Product.all.count
+    @product_count=Product.where(:Status =>1).count
     @user_count=User.all.count
     @categories=Category.all
+     @sales=Order.sum(:Total_Price)
+     @sold=Order.includes(:item_orders).sum(:Quantity)
+     #pride code candidate
+     @prod=Product.joins(:category,:item_orders)
+      @csales=@prod.group("Category_Name")
+     @csales_sum=@csales.sum("Quantity")
     
   end
   

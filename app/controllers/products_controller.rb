@@ -32,13 +32,13 @@ end
     
     def findex
         if params[:cat]!=''
-                 @products = Product.includes(:category).where(:Category_ID => params[:cat])
+                 @products = Product.includes(:category).where(:Category_ID => params[:cat]).where(:Status =>1)
                  @cat_selected=Category.where(:Category_ID => params[:cat]).first
                  
         else
-               @products = Product.all
+               @products = Product.where(:Status =>1)
         end
-        @total=Product.count
+        @total=Product.where(:Status =>1).count
     end
     
     def fshow
@@ -69,8 +69,25 @@ end
     @product.Image = params[:file]
     @product.Status=1
     @product.save
-    redirect_to '/products'
+    redirect_to @product
     end
+    
+    def status
+       @product = Product.find(params[:id])
+       if  @product.Status=1
+       @product.update_attributes(:Status =>2)
+       
+   else
+       @product.update_attributes(:Status => 1)
+        
+    end
+    
+    redirect_to "/products"
+    end
+    
+    
+    
+    
     def product_params
     params.require(:product).permit(:Product_Name, :Description, :Price, :Category_ID, :Image, :Status)
     end

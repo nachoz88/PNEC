@@ -90,7 +90,7 @@
                 
                       <div class="onecolumn" >
                       <div class="header">
-                      <span><span class="ico  gray  folder"></span> Add Category </span>
+                      <span><span class="ico  gray  folder"></span> Edit Category </span>
                       <div id="buttom_top">
                      
                           </ul>
@@ -131,20 +131,22 @@
                                      <!-- </form>-->
                                      
                                      <%= form_for :category, url: category_path(@category), method: :patch do |f| %>
-                                          <p>
-                                            <%= f.label :Name %><br>
-                                            <%= f.text_field :Category_Name %>
-                                          </p>
+                                         <div class="section">
+                                    
+                                            <label for="category_Name">Name</label>
+                                            <%= f.text_field :Category_Name,:required => true %>
+                                          </div>
+                                          <div class="section">
+                                            <label>Description </label>
+                                            <%= f.text_area :Description ,:required => true%>
+                                          </div>
                                          
-                                          <p>
-                                            <%= f.label :Description %><br>
-                                            <%= f.text_area :Description %>
-                                          </p>
-                                         
-                                          <p>
-                                            <%= f.submit %>
-                                          </p>
+                                         <div class="section last">
+                                           <%= f.submit :class => "uibutton submit_form" %>
+                                          
+                                          </div>
                                      <% end %>
+                                      <li ><%= link_to 'Cancel' , products_path %></li>
                                     </div>
                                   </div>  
                               </div><!--tab1-->

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get    'dashboard' => 'welcome#dashboard'
   get    'home' => 'welcome#index'
   get    'contactus' => 'welcome#contactus'
+ 
   
  
   # get    'login'   => 'users#sessions#new'
@@ -40,6 +41,7 @@ end
     end
     member do
       get 'fshow'
+      put 'status'
     end
   end
 

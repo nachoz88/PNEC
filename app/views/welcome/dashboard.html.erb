@@ -94,14 +94,15 @@
                         <div class="content" > <br  class="clear"/>
                             <div class="grid1 rightzero">
                                 <div class="shoutcutBox"> <span class="ico color chat-exclamation"></span> <strong><%= @order_count %></strong> <em>Complete Orders</em> </div>
-            
-                                <div class="shoutcutBox" > <span class="ico color item"></span> <strong><%= @product_count %></strong> <em> Watches</em> </div>
-                                <div class="shoutcutBox"> <span class="ico color group"></span> <strong><%= @user_count %></strong> <em>Users</em> </div>
+                    
+                                <div class="shoutcutBox" > <span class="ico color item"></span> <strong><%= @product_count %></strong> <em> Watches on Sale </em> </div>
+                                <div class="shoutcutBox" > <span class="ico color item"></span> <strong><%= number_to_currency( @sales,:unit => "Ksh ") %></strong> <em> Total Sales</em> </div>
+                                <div class="shoutcutBox "> <span class="ico color connect"></span> <strong><%=  @sold %></strong> <em>Watches sold </em> </div>
+                                <div class="shoutcutBox last"> <span class="ico color group"></span> <strong><%= @user_count %></strong> <em>Users</em> </div>
                                 <!--<div class="shoutcutBox"> <span class="ico color emoticon_grin"></span> <strong>152</strong> <em>New  Register </em> </div>-->
                                 <!--<div class="breaks"><span></span></div>-->
                                 <!-- // breaks -->
                                 <!--<div class="shoutcutBox"> <span class="ico color emoticon_in_love"></span> <strong>359</strong> <em>Today view pages</em> </div>-->
-                                <!--<div class="shoutcutBox last"> <span class="ico color connect"></span> <strong>152</strong> <em>user online </em> </div>-->
                             </div>
                             
                             <div  class="grid2">
@@ -109,8 +110,8 @@
                                     <thead>
                                         <tr>
                                             <th></th>
-                                            <% @categories.each do |category| %>
-                                            <th style="color : #aed741;"><%= category.Category_Name %></th>
+                                            <%  @csales_sum.each do |key,value| %>
+                                            <th style="color : #aed741;"><%= key %></th>
                                             
                                             <% end %>
                                         </tr>
@@ -118,15 +119,16 @@
                                     <tbody>
                                         <tr>
                                             <th></th>
-                                            <% @categories.each do |category| %>
+                                            <% @csales_sum.each do |key,value| %>
                                             
-                                            <td>  <%= category.products.count %></td>
+                                            <td>  <%= value %></td>
                                               <% end %>
                                         </tr>
                                     </tbody>
                                 </table>
                                 <div class="chart-pie-shadow" ></div>
-                                <div class="chart_title"><span>Categories</span></div>
+                                <div class="chart_title"><span> % Sales by Category</span></div>
+                               
                             </div>
                             <div class="clear"></div>
                         </div>

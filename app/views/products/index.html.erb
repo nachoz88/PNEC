@@ -143,9 +143,16 @@
       <td ><%= product.Description %></td>
       <td ><%= product.category.Category_Name %></td>
       <td ><%= product.Price %></td>
-      <td><%= link_to image_tag("/images/icon/icon_edit.png",border: 0), edit_product_path(product) %>
-      <%= link_to image_tag("/images/icon/color_18/info.png",border: 0) ,product_path(product) %></td>
+      <td><%= link_to image_tag("/images/icon/icon_edit.png",border: 0), edit_product_path(product) ,:title =>"Edit"  %>
+      <%= link_to image_tag("/images/icon/color_18/info.png",border: 0) ,product_path(product),:title =>"View"  %>
+      
+      <% if product.Status==1 %>
+      <%= button_to 'Disable', status_product_path(product),:class =>"uibutton special" , :method => :put %>
+      <% else %>
+      <%= button_to 'Enable', status_product_path(product),:class =>"uibutton submit_form" , :method => :put %>
+      <% end %>
 
+      </td>
     </tr>
   <% end %>
   </tbody>

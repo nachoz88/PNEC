@@ -102,7 +102,7 @@
                       <!--/start TAB/-->
                           <div id="uploadTab">
                           <ul class="tabs" >
-                              <li ><a href="#tab1"> Category Details</a></li>       
+                              <li ><a href="#tab1"> Category Details </a></li>       
                         </ul>
                         <div class="tab_container" >
                               <div id="tab1" class="tab_content"> 
@@ -129,20 +129,24 @@
                                      <!--    </div>-->
                                      <!-- </form>-->
                                      
-                                     <%= form_for :category, url: categories_path do |f| %>
-                                          <p>
-                                            <%= f.label :Name %><br>
-                                            <%= f.text_field :Category_Name %>
+                                     <%= form_for :category, html: {  id: "add" },url: categories_path  do |f| %>
+                                          <div class="section">
+                                    
+                                            <label for="category_Name">Name</label>
+                                            <%= f.text_field :Category_Name ,:required => true %>
+                                          </div>
+                                         
+                                          <div class="section">
+                                    
+                                            <label for="category_Description">Description</label><br>
+                                            <%= f.text_area :Description, :required => true %>
                                           </p>
                                          
-                                          <p>
-                                            <%= f.label :Description %><br>
-                                            <%= f.text_area :Description %>
-                                          </p>
-                                         
-                                          <p>
-                                            <%= f.submit %>
-                                          </p>
+                                          <div class="section last">
+                                           <%= f.submit :class => "uibutton submit_form" %>
+                                          <a class="uibutton special "   onclick="$('#add').get(0).reset();" title="Reset  Form"   >Clear Form</a>   
+                                         </div>
+                                          
                                      <% end %>
                                     </div>
                                   </div>  

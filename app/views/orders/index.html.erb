@@ -95,7 +95,7 @@
                       <div id="uploadTab">
                       <ul class="tabs" >
                            
-                                    
+                                  <span style="font-size:14pt">TOTAL SALES : <%=number_to_currency( @sales, :unit => "Ksh ") %></span>  
                       </ul>
                       <div class="tab_container" >
 
@@ -139,7 +139,7 @@
        <td >
                                       
                                          
-                                          <%= link_to image_tag("/images/icon/color_18/info.png",border: 0), order_path(order) %>
+                                          <%= link_to image_tag("/images/icon/color_18/info.png",border: 0), order_path(order) ,:title =>"View" %>
                                           
                                               
                                           

@@ -75,6 +75,7 @@
     <script type="text/javascript" src="/components/smartWizard/jquery.smartWizard.min.js"></script>
         <script type="text/javascript" src="/js/jquery.cookie.js"></script>
         <script type="text/javascript" src="/js/zice.custom.js"></script>      
+       
            
         </head> 
         <body class="dashborad">        
@@ -101,8 +102,15 @@
                       
                       <div class="tab_container" >
 
-                          
-                          
+                          <% if flash[:error] %>
+<div id="flash"> 
+   <p style="color: red;"><%= flash[:error] %></p>
+</div><% end %>  
+                        <% if flash[:notice] %>
+<div id="flash"> 
+   <p style="color: green;"><%= flash[:notice] %></p>
+</div>
+      <% end %>                       
                           <div id="tab2" class="tab_content"> 
                             <div class="load_page">
                               <ul class="uibutton-group">
@@ -111,8 +119,7 @@
                               </ul>
                               <form>
                 <div class="tableName toolbar">
-               
-<table class="display data_table2" >
+                    <table class="display data_table2" >
   <thead>
     <tr>
         <th></th>
@@ -129,11 +136,10 @@
           <td ></td>
       <td ><%= category.Category_Name %></td>
       <td ><%= category.Description %></td>
-       <td >
-                                      
-                                          <%= link_to image_tag("/images/icon/icon_edit.png",border: 0), edit_category_path(category) %>
-                                              
-                                          
+       <td>
+         <%= link_to image_tag("/images/icon/icon_edit.png",border: 0), edit_category_path(category),:title =>"Edit" %>
+         <br>
+        <%= button_to 'Delete', category_path(category),:class =>"uibutton special" , :method => :delete %>
                        </td>
                      
       <td style="display:none;" ></td>

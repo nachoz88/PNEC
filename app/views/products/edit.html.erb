@@ -82,9 +82,7 @@
         <div id="alertMessage" class="error"></div> 
                        
          <%= render "layouts/header" %>
-          
-            
-           
+    
                     <div class="clear"></div>
                        
                 
@@ -130,34 +128,38 @@
                                      <!--    </div>-->
                                      <!-- </form>-->
                                      
-                                     <%= form_for :product, url: product_path(@product),html: { multipart: true }, method: :patch do |f| %>
-                                     <p>
-                                            <%= f.label :Name %><br>
-                                            <%= f.text_field :Product_Name %>
-                                          </p>
+                                     <%= form_for :product, url: product_path(@product),html: { multipart: true,id:"add" }, method: :patch do |f| %>
+                                      <div class="section">
+                                            <label>Product Name </label>
+                                            <%= f.text_field :Product_Name,:required => true %>
+                                          </div>
                                          
-                                          <p>
-                                            <%= f.label :Description %><br>
-                                            <%= f.text_area :Description %>
-                                          </p>
+                                            <div class="section">
+                                            <label>Description </label>
+                                            <%= f.text_area :Description,:required => true %>
+                                          </div>
                                           
-                                          <p>
-                                            <%= f.label :Price %><br>
-                                            <%= f.number_field :Price %>
-                                          </p>
+                                           <div class="section">
+                                            <label>Price </label>
+                                            <%= f.number_field :Price,:required => true %>
+                                          </div>
                                           
-                                          <p>
+                                            <div class="section">
+                                            <label> Category </label>
                                              <%= f.select(:Category_ID, @category_options) %>
-                                          </p>
+                                          </div>
                                           
-                                          <p>
-                                               <%= f.file_field :Image %>
+                                          <div class="section ">
+                                                 <label>Upload Image</label>
+                                               <%= f.file_field :Image ,:required => true %>
                                    
-                                          </p>
+                                          </div>
                                          
-                                          <p>
-                                            <%= f.submit %>
-                                          </p>
+                                           
+                                          <div class="section last">
+                                           <%= f.submit :class => "uibutton submit_form" %>
+                                          
+                                          </div>
                                      <% end %>
                                      <li ><%= link_to 'Cancel' , products_path %></li>
                                     </div>

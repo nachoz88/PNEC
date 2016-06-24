@@ -17,6 +17,7 @@ end
     
     def index
     @orders = Order.includes(:user).all
+    @sales=Order.sum(:Total_Price)
     end
     def show
       @order=Order.includes(:user,:item_orders).find(params[:id])

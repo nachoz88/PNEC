@@ -42,7 +42,21 @@ end
     def create
     @category = Category.new(category_params)
     @category.save
-    redirect_to '/dashboard'
+    redirect_to @category
+    end
+    
+     def status
+      
+        @category=Category.find(params[:id])
+        if @category.products.present?
+          flash[:error] = "The "+ @category.Category_Name+" category  has products. You cannot delete! "
+          redirect_to '/categories' 
+          
+        else
+        @category.destroy
+        flash[:notice] = "The "+ @category.Category_Name+ " category has been deleted! "
+        redirect_to '/categories'
+        end
     end
     
     def category_params

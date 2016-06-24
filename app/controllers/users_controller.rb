@@ -13,6 +13,11 @@ end
     def index
         @users=User.all
     end
+    def completed_capcha?
+      if verify_recaptcha(model: @user)
+        true
+      
+    end
     def show
         @user=User.find(params[:id])
         @order_count = @user.orders.count

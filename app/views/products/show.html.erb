@@ -88,7 +88,7 @@
                 
                       <div class="onecolumn" >
                       <div class="header">
-                      <span><span class="ico  gray  folder"></span> Add Category </span>
+                      <span><span class="ico  gray  folder"></span> Show Product </span>
                       <div id="buttom_top">
                      
                           </ul>
@@ -101,7 +101,7 @@
                       <!--/start TAB/-->
                           <div id="uploadTab">
                           <ul class="tabs" >
-                              <li ><a href="#tab1"> Category Details</a></li>       
+                              <li ><a href="#tab1"> Product Details</a></li>       
                         </ul>
                         <div class="tab_container" >
                               <div id="tab1" class="tab_content"> 
@@ -151,7 +151,8 @@
                                              <%= image_tag @product.Image_url if @product.Image.present? %>
                                           </p>
                                           <p>
-                                            
+                                                                                 <li ><%= link_to 'Back to products list' , products_path %></li>
+
                                           </p>
                                      
                                     </div>

@@ -144,41 +144,55 @@
                                      <!--     <a class="uibutton special "   onclick="$('#add').get(0).reset();" title="Reset  Form"   >Clear Form</a>   -->
                                      <!--    </div>-->
                                      <!-- </form>-->
-                                     <%= form_for :product, html: { multipart: true }, url: products_path do |f| %>
+                                  
+                                   
+<%= form_for :product, html: { multipart: true, id: "add" }, url: products_path do |f| %>
                                         
+                                                                              <div class="section">
+                                            <label>Name </label>   
+                                            <div> <input type="text"  placeholder="Product Name" name="product[Product_Name]" id="product_Product_Name"  class="validate[required,minSize[6],maxSize[20],] medium" required /></div>
+                                           </div><br />
                                      
-                                          <p>
-                                            <%= f.label :Name %><br>
-                                            <%= f.text_field :Product_Name %>
-                                          </p>
+                                     <div class="section">
+                                            <label>Description </label>
+                                            <textarea rows="4" cols="60" name="product[Description]" id="product_Description" required></textarea>
+                                   </div>
+                                      
+                                        
                                          
-                                          <p>
-                                            <%= f.label :Description %><br>
-                                            <%= f.text_area :Description %>
-                                          </p>
+                                          <div class="section">
+                                    
+                                            <label for="product_Price">Price</label><br>
+                                            <input name="product[Price]" id="product_Price" type="number" required>
+                                          </div>
+                                          <div class="section">
+                                    
+                                            <label for="product_Category">Category</label><br>
                                           
-                                          <p>
-                                            <%= f.label :Price %><br>
-                                            <%= f.number_field :Price %>
-                                          </p>
+                                              <%= f.select(:Category_ID, @category_options) %>  
+                                          </div>
                                           
-                                          <p>
-                                             <%= f.select(:Category_ID, @category_options) %>
-                                          </p>
                                           
-                                          <p>
-                                                
-                                                
-                                             <%= f.label :Image %><br>
-                                             <%= f.file_field :Image %>
-                                               
-                                               
-                                          </p>
+                                            <div class="section ">
+                                                 <label>Upload Image</label><input type="file"  name="product[Image]" id="product_Image" accept="image/*" required />
+                                         </div> 
+                                         <br/>
+                                          
+                                        
                                          
-                                          <p>
-                                            <%= f.submit  %>
-                                          </p>
-                                     <% end %>
+                                         
+                                          
+                                          <div class="section last">
+                                           <%= f.submit :class => "uibutton submit_form" %>
+                                          <a class="uibutton special "   onclick="$('#add').get(0).reset();" title="Reset  Form"   >Clear Form</a>   
+                                         </div>
+                                          
+                                          
+  <% end %>
+                                    
+                                     
+                                     
+                                     
                                     </div>
                                   </div>  
                               </div><!--tab1-->

@@ -145,7 +145,7 @@
       <td> Administrator</td>
         <% end %>
         <td ><%= user.created_at %></td>
-      <td>  <%= link_to image_tag("/images/icon/color_18/info.png",border: 0), user_path(user) %> </td>
+      <td>  <%= link_to image_tag("/images/icon/color_18/info.png",border: 0), user_path(user),:title =>"View"  %> </td>
 
     </tr>
   <% end %>
