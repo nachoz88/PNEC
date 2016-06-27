@@ -107,7 +107,7 @@
 				<% if user_signed_in? %>
 				<li><%= link_to "MY ORDERS" , findex_orders_path ,:class => "color10" %>
 				<% end %>
-					<% if user_signed_in? && (current_user.role > 1) %>
+					<% if user_signed_in? && (current_user.role == 2) %>
 				<li><%= link_to "Back-end" , dashboard_path ,:class => "color10" %>
 				<% end %>
 				<!--<li><a class="color10" href="brands.html"></a></li>-->
