@@ -35,7 +35,7 @@
 				<i class="user"> </i> 
 				<!--<li class="user_desc">My Account</li>-->
 				<% if user_signed_in? %>
-  <strong><%= link_to  current_user.name , '', :class => 'navbar-link'  %></strong>.
+  <strong> <%= link_to  "Hello Mr. " + current_user.name , '', :class => 'navbar-link'  %></strong>.
   <br>
   
   <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>

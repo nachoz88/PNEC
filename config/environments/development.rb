@@ -52,8 +52,8 @@ config.action_mailer.smtp_settings = {
  :address              => "smtp.gmail.com",
  :port                 => 587,
  :domain               => 'gmail.com',
- :user_name            => 'noreply.pnec@gmail.com',
- :password             => 'noreply123',
+ :user_name            => 'pchegenjenga@gmail.com',
+ :password             => 'mynameischegeyo',
  :authentication       => :plain,
 :enable_starttls_auto => true
 }
