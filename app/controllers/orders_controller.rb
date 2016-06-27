@@ -64,7 +64,7 @@ end
           
           @cart_items.destroy_all
           
-          ReceiptMailer.receipt_email(params[:stripeEmail],@orders.Total_Price,@orders.Order_ID).deliver
+          ReceiptMailer.receipt_email(params[:stripeEmail],@orders.Total_Price,@orders.Order_ID,current_user.name).deliver
           
           redirect_to '/orders/findex', :flash =>{:notice => ' Payment Successfull, Your Order has been made!, check your email for confirmation.'}
       else

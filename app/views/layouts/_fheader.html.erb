@@ -1,5 +1,6 @@
 
    	  	<div class="header_top">
+   	  		
    	  	   <div class="header_top_left">
 	  	      <div class="box_11">  
 		      <% if user_signed_in? %>
@@ -13,6 +14,15 @@
 	          <div class="clearfix"> </div>
 	       </div>
            <div class="header_top_right">
+           	<form class="search" method="post" action="index.html" >
+		 <input type="text" name="q" placeholder="Search..." />
+		 <ul class="results" >
+			 <li><a href="index.html">Search Result #1<br /><span>Description...</span></a></li>
+			 <li><a href="index.html">Search Result #2<br /><span>Description...</span></a></li>
+	 		<li><a href="index.html">Search Result #3<br /><span>Description...</span></a></li>
+         	<li><a href="index.html">Search Result #4</a></li>
+		 </ul>
+	 </form>
 		  	 <div class="lang_list">
 				<!--<select tabindex="4" class="dropdown">
 				<!--	<option value="" class="label" value=""> KSH</option>-->
@@ -42,6 +52,7 @@
 			  		<% end %>
 		     </ul>
 		    <!-- start search-->
+		    
 				<div class="search-box">
 				   <div id="sb-search" class="sb-search">
 					  <form>
@@ -68,6 +79,7 @@
 					 new UISearch( document.getElementById( 'sb-search' ) );
 				   </script>
 					<!----//search-scripts---->
+					
 		            <div class="clearfix"> </div>
 			 </div>
 		     <div class="clearfix"> </div>

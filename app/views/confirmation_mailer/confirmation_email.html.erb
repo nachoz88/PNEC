@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+   
+    
+    <p>
+    Dear new user, <br>
+    
+      Welcome to PNEC Industries. Your registration is almost complete. Just one more step. Click the confirmation link below.
+      
+    </p>
+    
+    <a href>"https://pnec-nachoz88.c9users.io/users/confirmation?confirmation_token="+<%=@token%></a>
+    
+    <p> Total Charge : <%= number_to_currency(@total, :unit => 'Ksh ') %></p>
+    
+    
+    <p>Thanks for choosing PNEC and have a great day!</p>
+    <br>
+    <br>
+    <p>
+    <%= image_tag attachments['pnec.png'].url %>
+    </p>
+  </body>
+</html>

@@ -79,7 +79,7 @@
 
         </head>        
          <body class="dashborad">        
-        <div id="alertMessage" class="error"></div> 
+        <!--<div id="alertMessage" class="error"></div> -->
                        
                  <%= render "layouts/header" %>
           
@@ -100,7 +100,15 @@
                                     
                       </ul>
                       <div class="tab_container" >
-
+<% if flash[:error] %>
+<div id="flash"> 
+   <p style="color: red;"><%= flash[:error] %></p>
+</div><% end %>  
+                        <% if flash[:notice] %>
+<div id="flash"> 
+   <p style="color: green;"><%= flash[:notice] %></p>
+</div>
+      <% end %>              
                           
                           
                           <div id="tab2" class="tab_content"> 
@@ -134,6 +142,16 @@
     </tr>
   </thead>
   <tbody>
+     <tr style="display:none;" >
+          
+          <td ></td>
+          <td ></td>
+          <td ></td>
+          <td > <%= button_to 'Delete', '',:class =>"uibutton special",  :method => :delete %></td>
+          <td ></td>
+      </tr>
+    
+    
      <% @products.each do |product| %>
     <tr >
     	 
@@ -147,7 +165,7 @@
       <%= link_to image_tag("/images/icon/color_18/info.png",border: 0) ,product_path(product),:title =>"View"  %>
       
       <% if product.Status==1 %>
-      <%= button_to 'Disable', status_product_path(product),:class =>"uibutton special" , :method => :put %>
+      <%= button_to 'Delete', product_path(product),:class =>"uibutton special" , :method => :delete %>
       <% else %>
       <%= button_to 'Enable', status_product_path(product),:class =>"uibutton submit_form" , :method => :put %>
       <% end %>

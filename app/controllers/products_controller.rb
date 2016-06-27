@@ -25,7 +25,7 @@ end
        
         @category_options = Category.all.map{ |u| [ u.Category_Name, u.Category_ID ] }
         @product = Product.find(params[:id])
-             
+             @product.Image.cache!
             
 
     end
@@ -47,11 +47,9 @@ end
     end
     def update
              @product = Product.find(params[:id])
-         @product.Image = params[:file]
-            #  @product.Status=1
-            #  @product.save
-            puts product_params
-          if  @product.update(product_params)
+           @product.Image = params[:file]     
+    
+          if  @product.update_attributes(product_params)
             redirect_to  @product
           else
             render 'edit'
@@ -72,23 +70,36 @@ end
     redirect_to @product
     end
     
-    def status
+    def destroy
        @product = Product.find(params[:id])
-       if  @product.Status=1
-       @product.update_attributes(:Status =>2)
+#       if  @product.Status=1
+#       @product.update_attributes(:Status =>2)
        
-   else
-       @product.update_attributes(:Status => 1)
+#   else
+#       @product.update_attributes(:Status => 1)
+        
+#     end
+if @product.item_orders.present?
+    flash[:error] = "The item : "+ @product.Product_Name+" has been in an order, You cannot delete! "
+     redirect_to '/products' 
+          
+else
+    @product.destroy
+    
+        flash[:notice] = "The item : "+ @product.Product_Name+ " has been deleted! "
+        redirect_to '/products'
         
     end
+
+
     
-    redirect_to "/products"
+    
     end
     
     
     
     
     def product_params
-    params.require(:product).permit(:Product_Name, :Description, :Price, :Category_ID, :Image, :Status)
+    params.require(:product).permit(:Product_Name, :Description, :Price, :Category_ID, :Image, :Status,:Image_cache)
     end
 end

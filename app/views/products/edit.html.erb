@@ -128,7 +128,7 @@
                                      <!--    </div>-->
                                      <!-- </form>-->
                                      
-                                     <%= form_for :product, url: product_path(@product),html: { multipart: true,id:"add" }, method: :patch do |f| %>
+                                     <%= form_for @product,html: { multipart: true,id:"add" } do |f| %>
                                       <div class="section">
                                             <label>Product Name </label>
                                             <%= f.text_field :Product_Name,:required => true %>
@@ -151,8 +151,14 @@
                                           
                                           <div class="section ">
                                                  <label>Upload Image</label>
-                                               <%= f.file_field :Image ,:required => true %>
-                                   
+                                                 
+                                                 
+                                               <%= image_tag(@product.Image_url(:thumb)) if @product.Image? %>
+                                                <%= f.file_field :Image %>
+                                                <%= f.hidden_field :Image_cache %>
+                                              
+                                                                                              
+                                                                                   
                                           </div>
                                          
                                            

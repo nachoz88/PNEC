@@ -79,7 +79,7 @@
            
         </head> 
         <body class="dashborad">        
-        <div id="alertMessage" class="error"></div> 
+        <!--<div id="alertMessage" class="error"></div> -->
      <%= render "layouts/header" %>
           
             
@@ -131,15 +131,24 @@
     </tr>
   </thead>
   <tbody>
-     <% @categories.each do |category| %>
+      <tr style="display:none;" >
+          
+          <td ></td>
+          <td ></td>
+          <td ></td>
+          <td > <%= button_to 'Delete', '',:class =>"uibutton special",  :method => :delete %></td>
+          <td ></td>
+      </tr>
+     <% @categories.each_with_index do |category,index| %>
     <tr >
           <td ></td>
       <td ><%= category.Category_Name %></td>
       <td ><%= category.Description %></td>
        <td>
          <%= link_to image_tag("/images/icon/icon_edit.png",border: 0), edit_category_path(category),:title =>"Edit" %>
-         <br>
+       
         <%= button_to 'Delete', category_path(category),:class =>"uibutton special" , :method => :delete %>
+
                        </td>
                      
       <td style="display:none;" ></td>

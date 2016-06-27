@@ -45,7 +45,7 @@ end
     redirect_to @category
     end
     
-     def status
+     def destroy
       
         @category=Category.find(params[:id])
         if @category.products.present?

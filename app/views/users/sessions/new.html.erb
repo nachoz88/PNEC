@@ -97,6 +97,7 @@ html {
            <!--   <span class="f_help">Remember me</span>-->
            <!--   </div>-->
            <%= link_to "Sign up", new_user_registration_path, :class => 'f_help'  %> 
+           <%= link_to "Forgot Password", new_user_password_path, :class => 'f_help'  %>
           <div style="float:right;padding:20px 20px ;">
           
           
@@ -104,6 +105,7 @@ html {
                <ul class="uibutton-group">
                  <li>
       <%= f.submit "Log in",:html => {:id => "but_login"}, class: 'uibutton normal' %>
+      
       </li>
       <!--<li><a class="uibutton  normal" href="#" id="forgetpass">forgot password</a></li>-->
       
