@@ -14,15 +14,7 @@
 	          <div class="clearfix"> </div>
 	       </div>
            <div class="header_top_right">
-           	<form class="search" method="post" action="index.html" >
-		 <input type="text" name="q" placeholder="Search..." />
-		 <ul class="results" >
-			 <li><a href="index.html">Search Result #1<br /><span>Description...</span></a></li>
-			 <li><a href="index.html">Search Result #2<br /><span>Description...</span></a></li>
-	 		<li><a href="index.html">Search Result #3<br /><span>Description...</span></a></li>
-         	<li><a href="index.html">Search Result #4</a></li>
-		 </ul>
-	 </form>
+           	
 		  	 <div class="lang_list">
 				<!--<select tabindex="4" class="dropdown">
 				<!--	<option value="" class="label" value=""> KSH</option>-->
@@ -115,7 +107,7 @@
 				<% if user_signed_in? %>
 				<li><%= link_to "MY ORDERS" , findex_orders_path ,:class => "color10" %>
 				<% end %>
-					<% if user_signed_in? && current_user.role > 1 %>
+					<% if user_signed_in? && (current_user.role > 1) %>
 				<li><%= link_to "Back-end" , dashboard_path ,:class => "color10" %>
 				<% end %>
 				<!--<li><a class="color10" href="brands.html"></a></li>-->
