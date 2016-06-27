@@ -8,4 +8,7 @@ class RegistrationsController < Devise::RegistrationsController
         respond_with_navigational(resource) { render :new }
       end 
     end
+    def register_params
+      params.permit(:name)
+    end
 end
